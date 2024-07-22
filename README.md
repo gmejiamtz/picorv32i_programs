@@ -1,2 +1,2 @@
 # picorv32i_programs
-Codespace for writing and downloading programs for a picorv32 cpu
+Sample Programs for a PicoRV32i CPU for DRAM discharging

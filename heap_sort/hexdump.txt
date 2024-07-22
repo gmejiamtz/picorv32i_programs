@@ -1,0 +1,3650 @@
+
+heap_sort.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_ZL20__gthread_key_deletei>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	00000793          	li	a5,0
+  14:	00078513          	mv	a0,a5
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+00000024 <_Z8heapSortRSt6vectorIiSaIiEE>:
+  24:	fb010113          	addi	sp,sp,-80
+  28:	04112623          	sw	ra,76(sp)
+  2c:	04812423          	sw	s0,72(sp)
+  30:	04912223          	sw	s1,68(sp)
+  34:	05010413          	addi	s0,sp,80
+
+00000038 <.L0 >:
+  38:	faa42e23          	sw	a0,-68(s0)
+  3c:	fd840793          	addi	a5,s0,-40
+  40:	00078513          	mv	a0,a5
+  44:	00000097          	auipc	ra,0x0
+  48:	000080e7          	jalr	ra # 44 <.L0 +0xc>
+  4c:	fbc42783          	lw	a5,-68(s0)
+  50:	fef42423          	sw	a5,-24(s0)
+  54:	fe842503          	lw	a0,-24(s0)
+  58:	00000097          	auipc	ra,0x0
+  5c:	000080e7          	jalr	ra # 58 <.L0 +0x20>
+  60:	00050793          	mv	a5,a0
+  64:	fcf42823          	sw	a5,-48(s0)
+  68:	fe842503          	lw	a0,-24(s0)
+  6c:	00000097          	auipc	ra,0x0
+  70:	000080e7          	jalr	ra # 6c <.L0 +0x34>
+  74:	00050793          	mv	a5,a0
+  78:	fcf42623          	sw	a5,-52(s0)
+
+0000007c <.L8>:
+  7c:	fcc40713          	addi	a4,s0,-52
+  80:	fd040793          	addi	a5,s0,-48
+  84:	00070593          	mv	a1,a4
+  88:	00078513          	mv	a0,a5
+  8c:	00000097          	auipc	ra,0x0
+  90:	000080e7          	jalr	ra # 8c <.L8+0x10>
+  94:	00050793          	mv	a5,a0
+  98:	04078663          	beqz	a5,e4 <.L7>
+  9c:	fd040793          	addi	a5,s0,-48
+  a0:	00078513          	mv	a0,a5
+  a4:	00000097          	auipc	ra,0x0
+  a8:	000080e7          	jalr	ra # a4 <.L8+0x28>
+  ac:	00050793          	mv	a5,a0
+  b0:	0007a783          	lw	a5,0(a5)
+  b4:	fcf42a23          	sw	a5,-44(s0)
+  b8:	fd440713          	addi	a4,s0,-44
+  bc:	fd840793          	addi	a5,s0,-40
+  c0:	00070593          	mv	a1,a4
+  c4:	00078513          	mv	a0,a5
+
+000000c8 <.LEHB0>:
+  c8:	00000097          	auipc	ra,0x0
+  cc:	000080e7          	jalr	ra # c8 <.LEHB0>
+  d0:	fd040793          	addi	a5,s0,-48
+  d4:	00078513          	mv	a0,a5
+  d8:	00000097          	auipc	ra,0x0
+  dc:	000080e7          	jalr	ra # d8 <.LEHB0+0x10>
+  e0:	f9dff06f          	j	7c <.L8>
+
+000000e4 <.L7>:
+  e4:	fbc42503          	lw	a0,-68(s0)
+  e8:	00000097          	auipc	ra,0x0
+  ec:	000080e7          	jalr	ra # e8 <.L7+0x4>
+  f0:	00050793          	mv	a5,a0
+  f4:	fff78793          	addi	a5,a5,-1
+  f8:	fef42623          	sw	a5,-20(s0)
+
+000000fc <.L10>:
+  fc:	fec42783          	lw	a5,-20(s0)
+ 100:	0407cc63          	bltz	a5,158 <.L9>
+ 104:	fd840793          	addi	a5,s0,-40
+ 108:	00078513          	mv	a0,a5
+ 10c:	00000097          	auipc	ra,0x0
+ 110:	000080e7          	jalr	ra # 10c <.L10+0x10>
+ 114:	00050493          	mv	s1,a0
+ 118:	fec42783          	lw	a5,-20(s0)
+ 11c:	00078593          	mv	a1,a5
+ 120:	fbc42503          	lw	a0,-68(s0)
+ 124:	00000097          	auipc	ra,0x0
+ 128:	000080e7          	jalr	ra # 124 <.L10+0x28>
+ 12c:	00050713          	mv	a4,a0
+ 130:	0004a783          	lw	a5,0(s1)
+ 134:	00f72023          	sw	a5,0(a4)
+ 138:	fd840793          	addi	a5,s0,-40
+ 13c:	00078513          	mv	a0,a5
+ 140:	00000097          	auipc	ra,0x0
+ 144:	000080e7          	jalr	ra # 140 <.L10+0x44>
+
+00000148 <.LEHE0>:
+ 148:	fec42783          	lw	a5,-20(s0)
+ 14c:	fff78793          	addi	a5,a5,-1
+ 150:	fef42623          	sw	a5,-20(s0)
+ 154:	fa9ff06f          	j	fc <.L10>
+
+00000158 <.L9>:
+ 158:	fd840793          	addi	a5,s0,-40
+ 15c:	00078513          	mv	a0,a5
+ 160:	00000097          	auipc	ra,0x0
+ 164:	000080e7          	jalr	ra # 160 <.L9+0x8>
+ 168:	0280006f          	j	190 <.L13>
+
+0000016c <.L12>:
+ 16c:	00050493          	mv	s1,a0
+ 170:	fd840793          	addi	a5,s0,-40
+ 174:	00078513          	mv	a0,a5
+ 178:	00000097          	auipc	ra,0x0
+ 17c:	000080e7          	jalr	ra # 178 <.L12+0xc>
+ 180:	00048793          	mv	a5,s1
+ 184:	00078513          	mv	a0,a5
+
+00000188 <.LEHB1>:
+ 188:	00000097          	auipc	ra,0x0
+ 18c:	000080e7          	jalr	ra # 188 <.LEHB1>
+
+00000190 <.L13>:
+ 190:	04c12083          	lw	ra,76(sp)
+
+00000194 <.L0 >:
+ 194:	04812403          	lw	s0,72(sp)
+ 198:	04412483          	lw	s1,68(sp)
+ 19c:	05010113          	addi	sp,sp,80
+ 1a0:	00008067          	ret
+
+000001a4 <main>:
+ 1a4:	fb010113          	addi	sp,sp,-80
+ 1a8:	04112623          	sw	ra,76(sp)
+ 1ac:	04812423          	sw	s0,72(sp)
+ 1b0:	04912223          	sw	s1,68(sp)
+ 1b4:	05010413          	addi	s0,sp,80
+
+000001b8 <.L0 >:
+ 1b8:	000007b7          	lui	a5,0x0
+ 1bc:	00078793          	mv	a5,a5
+ 1c0:	fcf42a23          	sw	a5,-44(s0)
+ 1c4:	00900793          	li	a5,9
+ 1c8:	fcf42c23          	sw	a5,-40(s0)
+ 1cc:	fdc40793          	addi	a5,s0,-36
+ 1d0:	00078513          	mv	a0,a5
+ 1d4:	00000097          	auipc	ra,0x0
+ 1d8:	000080e7          	jalr	ra # 1d4 <.L0 +0x1c>
+ 1dc:	fdc40713          	addi	a4,s0,-36
+ 1e0:	fc840793          	addi	a5,s0,-56
+ 1e4:	00070693          	mv	a3,a4
+ 1e8:	fd442583          	lw	a1,-44(s0)
+ 1ec:	fd842603          	lw	a2,-40(s0)
+ 1f0:	00078513          	mv	a0,a5
+
+000001f4 <.LEHB2>:
+ 1f4:	00000097          	auipc	ra,0x0
+ 1f8:	000080e7          	jalr	ra # 1f4 <.LEHB2>
+
+000001fc <.LEHE2>:
+ 1fc:	fdc40793          	addi	a5,s0,-36
+ 200:	00078513          	mv	a0,a5
+ 204:	00000097          	auipc	ra,0x0
+ 208:	000080e7          	jalr	ra # 204 <.LEHE2+0x8>
+ 20c:	000007b7          	lui	a5,0x0
+ 210:	00078593          	mv	a1,a5
+ 214:	000007b7          	lui	a5,0x0
+ 218:	00078513          	mv	a0,a5
+
+0000021c <.LEHB3>:
+ 21c:	00000097          	auipc	ra,0x0
+ 220:	000080e7          	jalr	ra # 21c <.LEHB3>
+ 224:	fc840793          	addi	a5,s0,-56
+ 228:	fef42623          	sw	a5,-20(s0)
+ 22c:	fec42503          	lw	a0,-20(s0)
+ 230:	00000097          	auipc	ra,0x0
+ 234:	000080e7          	jalr	ra # 230 <.LEHB3+0x14>
+ 238:	00050793          	mv	a5,a0
+ 23c:	fcf42223          	sw	a5,-60(s0)
+ 240:	fec42503          	lw	a0,-20(s0)
+ 244:	00000097          	auipc	ra,0x0
+ 248:	000080e7          	jalr	ra # 244 <.LEHB3+0x28>
+ 24c:	00050793          	mv	a5,a0
+ 250:	fcf42023          	sw	a5,-64(s0)
+
+00000254 <.L16>:
+ 254:	fc040713          	addi	a4,s0,-64
+ 258:	fc440793          	addi	a5,s0,-60
+ 25c:	00070593          	mv	a1,a4
+ 260:	00078513          	mv	a0,a5
+ 264:	00000097          	auipc	ra,0x0
+ 268:	000080e7          	jalr	ra # 264 <.L16+0x10>
+ 26c:	00050793          	mv	a5,a0
+ 270:	06078063          	beqz	a5,2d0 <.L15>
+ 274:	fc440793          	addi	a5,s0,-60
+ 278:	00078513          	mv	a0,a5
+ 27c:	00000097          	auipc	ra,0x0
+ 280:	000080e7          	jalr	ra # 27c <.L16+0x28>
+ 284:	00050793          	mv	a5,a0
+ 288:	0007a783          	lw	a5,0(a5) # 0 <_ZL20__gthread_key_deletei>
+ 28c:	fef42423          	sw	a5,-24(s0)
+ 290:	fe842583          	lw	a1,-24(s0)
+ 294:	000007b7          	lui	a5,0x0
+ 298:	00078513          	mv	a0,a5
+ 29c:	00000097          	auipc	ra,0x0
+ 2a0:	000080e7          	jalr	ra # 29c <.L16+0x48>
+ 2a4:	00050713          	mv	a4,a0
+ 2a8:	000007b7          	lui	a5,0x0
+ 2ac:	00078593          	mv	a1,a5
+ 2b0:	00070513          	mv	a0,a4
+ 2b4:	00000097          	auipc	ra,0x0
+ 2b8:	000080e7          	jalr	ra # 2b4 <.L16+0x60>
+ 2bc:	fc440793          	addi	a5,s0,-60
+ 2c0:	00078513          	mv	a0,a5
+ 2c4:	00000097          	auipc	ra,0x0
+ 2c8:	000080e7          	jalr	ra # 2c4 <.L16+0x70>
+ 2cc:	f89ff06f          	j	254 <.L16>
+
+000002d0 <.L15>:
+ 2d0:	000007b7          	lui	a5,0x0
+ 2d4:	00078593          	mv	a1,a5
+ 2d8:	000007b7          	lui	a5,0x0
+ 2dc:	00078513          	mv	a0,a5
+ 2e0:	00000097          	auipc	ra,0x0
+ 2e4:	000080e7          	jalr	ra # 2e0 <.L15+0x10>
+ 2e8:	fc840793          	addi	a5,s0,-56
+ 2ec:	00078513          	mv	a0,a5
+ 2f0:	00000097          	auipc	ra,0x0
+ 2f4:	000080e7          	jalr	ra # 2f0 <.L15+0x20>
+ 2f8:	000007b7          	lui	a5,0x0
+ 2fc:	00078593          	mv	a1,a5
+ 300:	000007b7          	lui	a5,0x0
+ 304:	00078513          	mv	a0,a5
+ 308:	00000097          	auipc	ra,0x0
+ 30c:	000080e7          	jalr	ra # 308 <.L15+0x38>
+ 310:	fc840793          	addi	a5,s0,-56
+ 314:	fef42223          	sw	a5,-28(s0)
+ 318:	fe442503          	lw	a0,-28(s0)
+ 31c:	00000097          	auipc	ra,0x0
+ 320:	000080e7          	jalr	ra # 31c <.L15+0x4c>
+ 324:	00050793          	mv	a5,a0
+ 328:	faf42e23          	sw	a5,-68(s0)
+ 32c:	fe442503          	lw	a0,-28(s0)
+ 330:	00000097          	auipc	ra,0x0
+ 334:	000080e7          	jalr	ra # 330 <.L15+0x60>
+ 338:	00050793          	mv	a5,a0
+ 33c:	faf42c23          	sw	a5,-72(s0)
+
+00000340 <.L18>:
+ 340:	fb840713          	addi	a4,s0,-72
+ 344:	fbc40793          	addi	a5,s0,-68
+ 348:	00070593          	mv	a1,a4
+ 34c:	00078513          	mv	a0,a5
+ 350:	00000097          	auipc	ra,0x0
+ 354:	000080e7          	jalr	ra # 350 <.L18+0x10>
+ 358:	00050793          	mv	a5,a0
+ 35c:	06078063          	beqz	a5,3bc <.L17>
+ 360:	fbc40793          	addi	a5,s0,-68
+ 364:	00078513          	mv	a0,a5
+ 368:	00000097          	auipc	ra,0x0
+ 36c:	000080e7          	jalr	ra # 368 <.L18+0x28>
+ 370:	00050793          	mv	a5,a0
+ 374:	0007a783          	lw	a5,0(a5) # 0 <_ZL20__gthread_key_deletei>
+ 378:	fef42023          	sw	a5,-32(s0)
+ 37c:	fe042583          	lw	a1,-32(s0)
+ 380:	000007b7          	lui	a5,0x0
+ 384:	00078513          	mv	a0,a5
+ 388:	00000097          	auipc	ra,0x0
+ 38c:	000080e7          	jalr	ra # 388 <.L18+0x48>
+ 390:	00050713          	mv	a4,a0
+ 394:	000007b7          	lui	a5,0x0
+ 398:	00078593          	mv	a1,a5
+ 39c:	00070513          	mv	a0,a4
+ 3a0:	00000097          	auipc	ra,0x0
+ 3a4:	000080e7          	jalr	ra # 3a0 <.L18+0x60>
+ 3a8:	fbc40793          	addi	a5,s0,-68
+ 3ac:	00078513          	mv	a0,a5
+ 3b0:	00000097          	auipc	ra,0x0
+ 3b4:	000080e7          	jalr	ra # 3b0 <.L18+0x70>
+ 3b8:	f89ff06f          	j	340 <.L18>
+
+000003bc <.L17>:
+ 3bc:	000007b7          	lui	a5,0x0
+ 3c0:	00078593          	mv	a1,a5
+ 3c4:	000007b7          	lui	a5,0x0
+ 3c8:	00078513          	mv	a0,a5
+ 3cc:	00000097          	auipc	ra,0x0
+ 3d0:	000080e7          	jalr	ra # 3cc <.L17+0x10>
+
+000003d4 <.LEHE3>:
+ 3d4:	00000493          	li	s1,0
+ 3d8:	fc840793          	addi	a5,s0,-56
+ 3dc:	00078513          	mv	a0,a5
+ 3e0:	00000097          	auipc	ra,0x0
+ 3e4:	000080e7          	jalr	ra # 3e0 <.LEHE3+0xc>
+ 3e8:	00048793          	mv	a5,s1
+ 3ec:	04c0006f          	j	438 <.L24>
+
+000003f0 <.L22>:
+ 3f0:	00050493          	mv	s1,a0
+ 3f4:	fdc40793          	addi	a5,s0,-36
+ 3f8:	00078513          	mv	a0,a5
+ 3fc:	00000097          	auipc	ra,0x0
+ 400:	000080e7          	jalr	ra # 3fc <.L22+0xc>
+ 404:	00048793          	mv	a5,s1
+ 408:	00078513          	mv	a0,a5
+
+0000040c <.LEHB4>:
+ 40c:	00000097          	auipc	ra,0x0
+ 410:	000080e7          	jalr	ra # 40c <.LEHB4>
+
+00000414 <.L23>:
+ 414:	00050493          	mv	s1,a0
+ 418:	fc840793          	addi	a5,s0,-56
+ 41c:	00078513          	mv	a0,a5
+ 420:	00000097          	auipc	ra,0x0
+ 424:	000080e7          	jalr	ra # 420 <.L23+0xc>
+ 428:	00048793          	mv	a5,s1
+ 42c:	00078513          	mv	a0,a5
+ 430:	00000097          	auipc	ra,0x0
+ 434:	000080e7          	jalr	ra # 430 <.L23+0x1c>
+
+00000438 <.L24>:
+ 438:	00078513          	mv	a0,a5
+ 43c:	04c12083          	lw	ra,76(sp)
+
+00000440 <.L0 >:
+ 440:	04812403          	lw	s0,72(sp)
+ 444:	04412483          	lw	s1,68(sp)
+ 448:	05010113          	addi	sp,sp,80
+ 44c:	00008067          	ret
+
+00000450 <_Z41__static_initialization_and_destruction_0ii>:
+ 450:	fe010113          	addi	sp,sp,-32
+ 454:	00112e23          	sw	ra,28(sp)
+ 458:	00812c23          	sw	s0,24(sp)
+ 45c:	02010413          	addi	s0,sp,32
+
+00000460 <.L0 >:
+ 460:	fea42623          	sw	a0,-20(s0)
+ 464:	feb42423          	sw	a1,-24(s0)
+ 468:	fec42703          	lw	a4,-20(s0)
+ 46c:	00100793          	li	a5,1
+ 470:	04f71263          	bne	a4,a5,4b4 <.L226>
+ 474:	fe842703          	lw	a4,-24(s0)
+ 478:	000107b7          	lui	a5,0x10
+ 47c:	fff78793          	addi	a5,a5,-1 # ffff <.L0 +0xfb03>
+ 480:	02f71a63          	bne	a4,a5,4b4 <.L226>
+ 484:	000007b7          	lui	a5,0x0
+ 488:	00078513          	mv	a0,a5
+ 48c:	00000097          	auipc	ra,0x0
+ 490:	000080e7          	jalr	ra # 48c <.L0 +0x2c>
+ 494:	000007b7          	lui	a5,0x0
+ 498:	00078613          	mv	a2,a5
+ 49c:	000007b7          	lui	a5,0x0
+ 4a0:	00078593          	mv	a1,a5
+ 4a4:	000007b7          	lui	a5,0x0
+ 4a8:	00078513          	mv	a0,a5
+ 4ac:	00000097          	auipc	ra,0x0
+ 4b0:	000080e7          	jalr	ra # 4ac <.L0 +0x4c>
+
+000004b4 <.L226>:
+ 4b4:	00000013          	nop
+ 4b8:	01c12083          	lw	ra,28(sp)
+
+000004bc <.L0 >:
+ 4bc:	01812403          	lw	s0,24(sp)
+ 4c0:	02010113          	addi	sp,sp,32
+ 4c4:	00008067          	ret
+
+000004c8 <_GLOBAL__sub_I__Z8heapSortRSt6vectorIiSaIiEE>:
+ 4c8:	ff010113          	addi	sp,sp,-16
+ 4cc:	00112623          	sw	ra,12(sp)
+ 4d0:	00812423          	sw	s0,8(sp)
+ 4d4:	01010413          	addi	s0,sp,16
+
+000004d8 <.L0 >:
+ 4d8:	000107b7          	lui	a5,0x10
+ 4dc:	fff78593          	addi	a1,a5,-1 # ffff <.L0 +0xfb03>
+ 4e0:	00100513          	li	a0,1
+ 4e4:	00000097          	auipc	ra,0x0
+ 4e8:	000080e7          	jalr	ra # 4e4 <.L0 +0xc>
+ 4ec:	00c12083          	lw	ra,12(sp)
+
+000004f0 <.L0 >:
+ 4f0:	00812403          	lw	s0,8(sp)
+ 4f4:	01010113          	addi	sp,sp,16
+ 4f8:	00008067          	ret
+
+Disassembly of section .text._ZnwjPv:
+
+00000000 <_ZnwjPv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	feb42423          	sw	a1,-24(s0)
+  14:	fe842783          	lw	a5,-24(s0)
+  18:	00078513          	mv	a0,a5
+  1c:	01c12403          	lw	s0,28(sp)
+  20:	02010113          	addi	sp,sp,32
+  24:	00008067          	ret
+
+Disassembly of section .text._ZNSt14priority_queueIiSt6vectorIiSaIiEESt4lessIiEED2Ev:
+
+00000000 <_ZNSt14priority_queueIiSt6vectorIiSaIiEESt4lessIiEED1Ev>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42783          	lw	a5,-20(s0)
+  18:	00078513          	mv	a0,a5
+  1c:	00000097          	auipc	ra,0x0
+  20:	000080e7          	jalr	ra # 1c <.L0 +0xc>
+  24:	00000013          	nop
+  28:	01c12083          	lw	ra,28(sp)
+
+0000002c <.L0 >:
+  2c:	01812403          	lw	s0,24(sp)
+  30:	02010113          	addi	sp,sp,32
+  34:	00008067          	ret
+
+Disassembly of section .text._ZNSt14priority_queueIiSt6vectorIiSaIiEESt4lessIiEEC2IS2_vEEv:
+
+00000000 <_ZNSt14priority_queueIiSt6vectorIiSaIiEESt4lessIiEEC1IS2_vEEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42783          	lw	a5,-20(s0)
+  18:	00078513          	mv	a0,a5
+  1c:	00000097          	auipc	ra,0x0
+  20:	000080e7          	jalr	ra # 1c <.L0 +0xc>
+  24:	00000013          	nop
+  28:	01c12083          	lw	ra,28(sp)
+
+0000002c <.L0 >:
+  2c:	01812403          	lw	s0,24(sp)
+  30:	02010113          	addi	sp,sp,32
+  34:	00008067          	ret
+
+Disassembly of section .text._ZNSt6vectorIiSaIiEED2Ev:
+
+00000000 <_ZNSt6vectorIiSaIiEED1Ev>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	01212823          	sw	s2,16(sp)
+  14:	02010413          	addi	s0,sp,32
+
+00000018 <.L0 >:
+  18:	fea42623          	sw	a0,-20(s0)
+  1c:	fec42783          	lw	a5,-20(s0)
+  20:	0007a483          	lw	s1,0(a5)
+  24:	fec42783          	lw	a5,-20(s0)
+  28:	0047a903          	lw	s2,4(a5)
+  2c:	fec42783          	lw	a5,-20(s0)
+  30:	00078513          	mv	a0,a5
+  34:	00000097          	auipc	ra,0x0
+  38:	000080e7          	jalr	ra # 34 <.L0 +0x1c>
+  3c:	00050793          	mv	a5,a0
+  40:	00078613          	mv	a2,a5
+  44:	00090593          	mv	a1,s2
+  48:	00048513          	mv	a0,s1
+  4c:	00000097          	auipc	ra,0x0
+  50:	000080e7          	jalr	ra # 4c <.L0 +0x34>
+  54:	fec42783          	lw	a5,-20(s0)
+  58:	00078513          	mv	a0,a5
+  5c:	00000097          	auipc	ra,0x0
+  60:	000080e7          	jalr	ra # 5c <.L0 +0x44>
+  64:	00000013          	nop
+  68:	01c12083          	lw	ra,28(sp)
+
+0000006c <.L0 >:
+  6c:	01812403          	lw	s0,24(sp)
+  70:	01412483          	lw	s1,20(sp)
+  74:	01012903          	lw	s2,16(sp)
+  78:	02010113          	addi	sp,sp,32
+  7c:	00008067          	ret
+
+Disassembly of section .text._ZNSt6vectorIiSaIiEE5beginEv:
+
+00000000 <_ZNSt6vectorIiSaIiEE5beginEv>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fdc42703          	lw	a4,-36(s0)
+  18:	fec40793          	addi	a5,s0,-20
+  1c:	00070593          	mv	a1,a4
+  20:	00078513          	mv	a0,a5
+  24:	00000097          	auipc	ra,0x0
+  28:	000080e7          	jalr	ra # 24 <.L0 +0x14>
+  2c:	fec42783          	lw	a5,-20(s0)
+  30:	00078513          	mv	a0,a5
+  34:	02c12083          	lw	ra,44(sp)
+
+00000038 <.L0 >:
+  38:	02812403          	lw	s0,40(sp)
+  3c:	03010113          	addi	sp,sp,48
+  40:	00008067          	ret
+
+Disassembly of section .text._ZNSt6vectorIiSaIiEE3endEv:
+
+00000000 <_ZNSt6vectorIiSaIiEE3endEv>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fdc42783          	lw	a5,-36(s0)
+  18:	00478713          	addi	a4,a5,4
+  1c:	fec40793          	addi	a5,s0,-20
+  20:	00070593          	mv	a1,a4
+  24:	00078513          	mv	a0,a5
+  28:	00000097          	auipc	ra,0x0
+  2c:	000080e7          	jalr	ra # 28 <.L0 +0x18>
+  30:	fec42783          	lw	a5,-20(s0)
+  34:	00078513          	mv	a0,a5
+  38:	02c12083          	lw	ra,44(sp)
+
+0000003c <.L0 >:
+  3c:	02812403          	lw	s0,40(sp)
+  40:	03010113          	addi	sp,sp,48
+  44:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxxneIPiSt6vectorIiSaIiEEEEbRKNS_17__normal_iteratorIT_T0_EESA_:
+
+00000000 <_ZN9__gnu_cxxneIPiSt6vectorIiSaIiEEEEbRKNS_17__normal_iteratorIT_T0_EESA_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	02010413          	addi	s0,sp,32
+
+00000014 <.L0 >:
+  14:	fea42623          	sw	a0,-20(s0)
+  18:	feb42423          	sw	a1,-24(s0)
+  1c:	fec42503          	lw	a0,-20(s0)
+  20:	00000097          	auipc	ra,0x0
+  24:	000080e7          	jalr	ra # 20 <.L0 +0xc>
+  28:	00050793          	mv	a5,a0
+  2c:	0007a483          	lw	s1,0(a5)
+  30:	fe842503          	lw	a0,-24(s0)
+  34:	00000097          	auipc	ra,0x0
+  38:	000080e7          	jalr	ra # 34 <.L0 +0x20>
+  3c:	00050793          	mv	a5,a0
+  40:	0007a783          	lw	a5,0(a5)
+  44:	40f487b3          	sub	a5,s1,a5
+  48:	00f037b3          	snez	a5,a5
+  4c:	0ff7f793          	andi	a5,a5,255
+  50:	00078513          	mv	a0,a5
+  54:	01c12083          	lw	ra,28(sp)
+
+00000058 <.L0 >:
+  58:	01812403          	lw	s0,24(sp)
+  5c:	01412483          	lw	s1,20(sp)
+  60:	02010113          	addi	sp,sp,32
+  64:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEppEv:
+
+00000000 <_ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEppEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	0007a783          	lw	a5,0(a5)
+  18:	00478713          	addi	a4,a5,4
+  1c:	fec42783          	lw	a5,-20(s0)
+  20:	00e7a023          	sw	a4,0(a5)
+  24:	fec42783          	lw	a5,-20(s0)
+  28:	00078513          	mv	a0,a5
+  2c:	01c12403          	lw	s0,28(sp)
+  30:	02010113          	addi	sp,sp,32
+  34:	00008067          	ret
+
+Disassembly of section .text._ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEdeEv:
+
+00000000 <_ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEdeEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	0007a783          	lw	a5,0(a5)
+  18:	00078513          	mv	a0,a5
+  1c:	01c12403          	lw	s0,28(sp)
+  20:	02010113          	addi	sp,sp,32
+  24:	00008067          	ret
+
+Disassembly of section .text._ZNSt14priority_queueIiSt6vectorIiSaIiEESt4lessIiEE4pushERKi:
+
+00000000 <_ZNSt14priority_queueIiSt6vectorIiSaIiEESt4lessIiEE4pushERKi>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	01212823          	sw	s2,16(sp)
+  14:	02010413          	addi	s0,sp,32
+
+00000018 <.L0 >:
+  18:	fea42623          	sw	a0,-20(s0)
+  1c:	feb42423          	sw	a1,-24(s0)
+  20:	fec42783          	lw	a5,-20(s0)
+  24:	fe842583          	lw	a1,-24(s0)
+  28:	00078513          	mv	a0,a5
+  2c:	00000097          	auipc	ra,0x0
+  30:	000080e7          	jalr	ra # 2c <.L0 +0x14>
+  34:	fec42783          	lw	a5,-20(s0)
+  38:	00078513          	mv	a0,a5
+  3c:	00000097          	auipc	ra,0x0
+  40:	000080e7          	jalr	ra # 3c <.L0 +0x24>
+  44:	00050493          	mv	s1,a0
+  48:	fec42783          	lw	a5,-20(s0)
+  4c:	00078513          	mv	a0,a5
+  50:	00000097          	auipc	ra,0x0
+  54:	000080e7          	jalr	ra # 50 <.L0 +0x38>
+  58:	00050793          	mv	a5,a0
+  5c:	00090613          	mv	a2,s2
+  60:	00078593          	mv	a1,a5
+  64:	00048513          	mv	a0,s1
+  68:	00000097          	auipc	ra,0x0
+  6c:	000080e7          	jalr	ra # 68 <.L0 +0x50>
+  70:	00000013          	nop
+  74:	01c12083          	lw	ra,28(sp)
+
+00000078 <.L0 >:
+  78:	01812403          	lw	s0,24(sp)
+  7c:	01412483          	lw	s1,20(sp)
+  80:	01012903          	lw	s2,16(sp)
+  84:	02010113          	addi	sp,sp,32
+  88:	00008067          	ret
+
+Disassembly of section .text._ZNKSt6vectorIiSaIiEE4sizeEv:
+
+00000000 <_ZNKSt6vectorIiSaIiEE4sizeEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	0047a703          	lw	a4,4(a5)
+  18:	fec42783          	lw	a5,-20(s0)
+  1c:	0007a783          	lw	a5,0(a5)
+  20:	40f707b3          	sub	a5,a4,a5
+  24:	4027d793          	srai	a5,a5,0x2
+  28:	00078513          	mv	a0,a5
+  2c:	01c12403          	lw	s0,28(sp)
+  30:	02010113          	addi	sp,sp,32
+  34:	00008067          	ret
+
+Disassembly of section .text._ZNSt6vectorIiSaIiEEixEj:
+
+00000000 <_ZNSt6vectorIiSaIiEEixEj>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	feb42423          	sw	a1,-24(s0)
+  14:	fec42783          	lw	a5,-20(s0)
+  18:	0007a703          	lw	a4,0(a5)
+  1c:	fe842783          	lw	a5,-24(s0)
+  20:	00279793          	slli	a5,a5,0x2
+  24:	00f707b3          	add	a5,a4,a5
+  28:	00078513          	mv	a0,a5
+  2c:	01c12403          	lw	s0,28(sp)
+  30:	02010113          	addi	sp,sp,32
+  34:	00008067          	ret
+
+Disassembly of section .text._ZNKSt14priority_queueIiSt6vectorIiSaIiEESt4lessIiEE3topEv:
+
+00000000 <_ZNKSt14priority_queueIiSt6vectorIiSaIiEESt4lessIiEE3topEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42783          	lw	a5,-20(s0)
+  18:	00078513          	mv	a0,a5
+  1c:	00000097          	auipc	ra,0x0
+  20:	000080e7          	jalr	ra # 1c <.L0 +0xc>
+  24:	00050793          	mv	a5,a0
+  28:	00078513          	mv	a0,a5
+  2c:	01c12083          	lw	ra,28(sp)
+
+00000030 <.L0 >:
+  30:	01812403          	lw	s0,24(sp)
+  34:	02010113          	addi	sp,sp,32
+  38:	00008067          	ret
+
+Disassembly of section .text._ZNSt14priority_queueIiSt6vectorIiSaIiEESt4lessIiEE3popEv:
+
+00000000 <_ZNSt14priority_queueIiSt6vectorIiSaIiEESt4lessIiEE3popEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	01212823          	sw	s2,16(sp)
+  14:	02010413          	addi	s0,sp,32
+
+00000018 <.L0 >:
+  18:	fea42623          	sw	a0,-20(s0)
+  1c:	fec42783          	lw	a5,-20(s0)
+  20:	00078513          	mv	a0,a5
+  24:	00000097          	auipc	ra,0x0
+  28:	000080e7          	jalr	ra # 24 <.L0 +0xc>
+  2c:	00050493          	mv	s1,a0
+  30:	fec42783          	lw	a5,-20(s0)
+  34:	00078513          	mv	a0,a5
+  38:	00000097          	auipc	ra,0x0
+  3c:	000080e7          	jalr	ra # 38 <.L0 +0x20>
+  40:	00050793          	mv	a5,a0
+  44:	00090613          	mv	a2,s2
+  48:	00078593          	mv	a1,a5
+  4c:	00048513          	mv	a0,s1
+  50:	00000097          	auipc	ra,0x0
+  54:	000080e7          	jalr	ra # 50 <.L0 +0x38>
+  58:	fec42783          	lw	a5,-20(s0)
+  5c:	00078513          	mv	a0,a5
+  60:	00000097          	auipc	ra,0x0
+  64:	000080e7          	jalr	ra # 60 <.L0 +0x48>
+  68:	00000013          	nop
+  6c:	01c12083          	lw	ra,28(sp)
+
+00000070 <.L0 >:
+  70:	01812403          	lw	s0,24(sp)
+  74:	01412483          	lw	s1,20(sp)
+  78:	01012903          	lw	s2,16(sp)
+  7c:	02010113          	addi	sp,sp,32
+  80:	00008067          	ret
+
+Disassembly of section .text._ZNSaIiEC2Ev:
+
+00000000 <_ZNSaIiEC1Ev>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42503          	lw	a0,-20(s0)
+  18:	00000097          	auipc	ra,0x0
+  1c:	000080e7          	jalr	ra # 18 <.L0 +0x8>
+  20:	00000013          	nop
+  24:	01c12083          	lw	ra,28(sp)
+
+00000028 <.L0 >:
+  28:	01812403          	lw	s0,24(sp)
+  2c:	02010113          	addi	sp,sp,32
+  30:	00008067          	ret
+
+Disassembly of section .text._ZNSaIiED2Ev:
+
+00000000 <_ZNSaIiED1Ev>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42503          	lw	a0,-20(s0)
+  18:	00000097          	auipc	ra,0x0
+  1c:	000080e7          	jalr	ra # 18 <.L0 +0x8>
+  20:	00000013          	nop
+  24:	01c12083          	lw	ra,28(sp)
+
+00000028 <.L0 >:
+  28:	01812403          	lw	s0,24(sp)
+  2c:	02010113          	addi	sp,sp,32
+  30:	00008067          	ret
+
+Disassembly of section .text._ZNSt6vectorIiSaIiEEC2ESt16initializer_listIiERKS0_:
+
+00000000 <_ZNSt6vectorIiSaIiEEC1ESt16initializer_listIiERKS0_>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	02912223          	sw	s1,36(sp)
+  10:	03212023          	sw	s2,32(sp)
+  14:	03010413          	addi	s0,sp,48
+
+00000018 <.L0 >:
+  18:	fca42e23          	sw	a0,-36(s0)
+  1c:	fcb42a23          	sw	a1,-44(s0)
+  20:	fcc42c23          	sw	a2,-40(s0)
+  24:	fcd42823          	sw	a3,-48(s0)
+  28:	fdc42783          	lw	a5,-36(s0)
+  2c:	fd042583          	lw	a1,-48(s0)
+  30:	00078513          	mv	a0,a5
+  34:	00000097          	auipc	ra,0x0
+  38:	000080e7          	jalr	ra # 34 <.L0 +0x1c>
+  3c:	fd440793          	addi	a5,s0,-44
+  40:	00078513          	mv	a0,a5
+  44:	00000097          	auipc	ra,0x0
+  48:	000080e7          	jalr	ra # 44 <.L0 +0x2c>
+  4c:	00050493          	mv	s1,a0
+  50:	fd440793          	addi	a5,s0,-44
+  54:	00078513          	mv	a0,a5
+  58:	00000097          	auipc	ra,0x0
+  5c:	000080e7          	jalr	ra # 58 <.L0 +0x40>
+  60:	00050793          	mv	a5,a0
+  64:	00090693          	mv	a3,s2
+  68:	00078613          	mv	a2,a5
+  6c:	00048593          	mv	a1,s1
+  70:	fdc42503          	lw	a0,-36(s0)
+
+00000074 <.LEHB5>:
+  74:	00000097          	auipc	ra,0x0
+  78:	000080e7          	jalr	ra # 74 <.LEHB5>
+
+0000007c <.LEHE5>:
+  7c:	0280006f          	j	a4 <.L50>
+
+00000080 <.L49>:
+  80:	00050493          	mv	s1,a0
+  84:	fdc42783          	lw	a5,-36(s0)
+  88:	00078513          	mv	a0,a5
+  8c:	00000097          	auipc	ra,0x0
+  90:	000080e7          	jalr	ra # 8c <.L49+0xc>
+  94:	00048793          	mv	a5,s1
+  98:	00078513          	mv	a0,a5
+
+0000009c <.LEHB6>:
+  9c:	00000097          	auipc	ra,0x0
+  a0:	000080e7          	jalr	ra # 9c <.LEHB6>
+
+000000a4 <.L50>:
+  a4:	02c12083          	lw	ra,44(sp)
+
+000000a8 <.L0 >:
+  a8:	02812403          	lw	s0,40(sp)
+  ac:	02412483          	lw	s1,36(sp)
+  b0:	02012903          	lw	s2,32(sp)
+  b4:	03010113          	addi	sp,sp,48
+  b8:	00008067          	ret
+
+Disassembly of section .text._ZNSt6vectorIiSaIiEEC2Ev:
+
+00000000 <_ZNSt6vectorIiSaIiEEC1Ev>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42783          	lw	a5,-20(s0)
+  18:	00078513          	mv	a0,a5
+  1c:	00000097          	auipc	ra,0x0
+  20:	000080e7          	jalr	ra # 1c <.L0 +0xc>
+  24:	00000013          	nop
+  28:	01c12083          	lw	ra,28(sp)
+
+0000002c <.L0 >:
+  2c:	01812403          	lw	s0,24(sp)
+  30:	02010113          	addi	sp,sp,32
+  34:	00008067          	ret
+
+Disassembly of section .text._ZNSt12_Vector_baseIiSaIiEE12_Vector_implD2Ev:
+
+00000000 <_ZNSt12_Vector_baseIiSaIiEE12_Vector_implD1Ev>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42503          	lw	a0,-20(s0)
+  18:	00000097          	auipc	ra,0x0
+  1c:	000080e7          	jalr	ra # 18 <.L0 +0x8>
+  20:	00000013          	nop
+  24:	01c12083          	lw	ra,28(sp)
+
+00000028 <.L0 >:
+  28:	01812403          	lw	s0,24(sp)
+  2c:	02010113          	addi	sp,sp,32
+  30:	00008067          	ret
+
+Disassembly of section .text._ZNSt12_Vector_baseIiSaIiEED2Ev:
+
+00000000 <_ZNSt12_Vector_baseIiSaIiEED1Ev>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42783          	lw	a5,-20(s0)
+  18:	0007a683          	lw	a3,0(a5)
+  1c:	fec42783          	lw	a5,-20(s0)
+  20:	0087a703          	lw	a4,8(a5)
+  24:	fec42783          	lw	a5,-20(s0)
+  28:	0007a783          	lw	a5,0(a5)
+  2c:	40f707b3          	sub	a5,a4,a5
+  30:	4027d793          	srai	a5,a5,0x2
+  34:	00078613          	mv	a2,a5
+  38:	00068593          	mv	a1,a3
+  3c:	fec42503          	lw	a0,-20(s0)
+  40:	00000097          	auipc	ra,0x0
+  44:	000080e7          	jalr	ra # 40 <.L0 +0x30>
+  48:	fec42783          	lw	a5,-20(s0)
+  4c:	00078513          	mv	a0,a5
+  50:	00000097          	auipc	ra,0x0
+  54:	000080e7          	jalr	ra # 50 <.L0 +0x40>
+  58:	00000013          	nop
+  5c:	01c12083          	lw	ra,28(sp)
+
+00000060 <.L0 >:
+  60:	01812403          	lw	s0,24(sp)
+  64:	02010113          	addi	sp,sp,32
+  68:	00008067          	ret
+
+Disassembly of section .text._ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv:
+
+00000000 <_ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	00078513          	mv	a0,a5
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZSt8_DestroyIPiiEvT_S1_RSaIT0_E:
+
+00000000 <_ZSt8_DestroyIPiiEvT_S1_RSaIT0_E>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fec42223          	sw	a2,-28(s0)
+  1c:	fe842583          	lw	a1,-24(s0)
+  20:	fec42503          	lw	a0,-20(s0)
+  24:	00000097          	auipc	ra,0x0
+  28:	000080e7          	jalr	ra # 24 <.L0 +0x14>
+  2c:	00000013          	nop
+  30:	01c12083          	lw	ra,28(sp)
+
+00000034 <.L0 >:
+  34:	01812403          	lw	s0,24(sp)
+  38:	02010113          	addi	sp,sp,32
+  3c:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_:
+
+00000000 <_ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC1ERKS1_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	feb42423          	sw	a1,-24(s0)
+  14:	fe842783          	lw	a5,-24(s0)
+  18:	0007a703          	lw	a4,0(a5)
+  1c:	fec42783          	lw	a5,-20(s0)
+  20:	00e7a023          	sw	a4,0(a5)
+  24:	00000013          	nop
+  28:	01c12403          	lw	s0,28(sp)
+  2c:	02010113          	addi	sp,sp,32
+  30:	00008067          	ret
+
+Disassembly of section .text._ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEE4baseEv:
+
+00000000 <_ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEE4baseEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	00078513          	mv	a0,a5
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZNSt6vectorIiSaIiEE9push_backERKi:
+
+00000000 <_ZNSt6vectorIiSaIiEE9push_backERKi>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fec42783          	lw	a5,-20(s0)
+  1c:	0047a703          	lw	a4,4(a5)
+  20:	fec42783          	lw	a5,-20(s0)
+  24:	0087a783          	lw	a5,8(a5)
+  28:	02f70e63          	beq	a4,a5,64 <.L61>
+  2c:	fec42703          	lw	a4,-20(s0)
+  30:	fec42783          	lw	a5,-20(s0)
+  34:	0047a783          	lw	a5,4(a5)
+  38:	fe842603          	lw	a2,-24(s0)
+  3c:	00078593          	mv	a1,a5
+  40:	00070513          	mv	a0,a4
+  44:	00000097          	auipc	ra,0x0
+  48:	000080e7          	jalr	ra # 44 <.L0 +0x34>
+  4c:	fec42783          	lw	a5,-20(s0)
+  50:	0047a783          	lw	a5,4(a5)
+  54:	00478713          	addi	a4,a5,4
+  58:	fec42783          	lw	a5,-20(s0)
+  5c:	00e7a223          	sw	a4,4(a5)
+  60:	0280006f          	j	88 <.L63>
+
+00000064 <.L61>:
+  64:	fec42503          	lw	a0,-20(s0)
+  68:	00000097          	auipc	ra,0x0
+  6c:	000080e7          	jalr	ra # 68 <.L61+0x4>
+  70:	00050793          	mv	a5,a0
+  74:	fe842603          	lw	a2,-24(s0)
+  78:	00078593          	mv	a1,a5
+  7c:	fec42503          	lw	a0,-20(s0)
+  80:	00000097          	auipc	ra,0x0
+  84:	000080e7          	jalr	ra # 80 <.L61+0x1c>
+
+00000088 <.L63>:
+  88:	00000013          	nop
+  8c:	01c12083          	lw	ra,28(sp)
+
+00000090 <.L0 >:
+  90:	01812403          	lw	s0,24(sp)
+  94:	02010113          	addi	sp,sp,32
+  98:	00008067          	ret
+
+Disassembly of section .text._ZSt9push_heapIN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEESt4lessIiEEvT_S9_T0_:
+
+00000000 <_ZSt9push_heapIN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEESt4lessIiEEvT_S9_T0_>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	02912223          	sw	s1,36(sp)
+  10:	03010413          	addi	s0,sp,48
+
+00000014 <.L0 >:
+  14:	fca42e23          	sw	a0,-36(s0)
+  18:	fcb42c23          	sw	a1,-40(s0)
+  1c:	fcc40a23          	sb	a2,-44(s0)
+  20:	fd440793          	addi	a5,s0,-44
+  24:	00078513          	mv	a0,a5
+  28:	00000097          	auipc	ra,0x0
+  2c:	000080e7          	jalr	ra # 28 <.L0 +0x14>
+  30:	fe840793          	addi	a5,s0,-24
+  34:	00048593          	mv	a1,s1
+  38:	00078513          	mv	a0,a5
+  3c:	00000097          	auipc	ra,0x0
+  40:	000080e7          	jalr	ra # 3c <.L0 +0x28>
+  44:	fd840793          	addi	a5,s0,-40
+  48:	00100593          	li	a1,1
+  4c:	00078513          	mv	a0,a5
+  50:	00000097          	auipc	ra,0x0
+  54:	000080e7          	jalr	ra # 50 <.L0 +0x3c>
+  58:	00050793          	mv	a5,a0
+  5c:	fef42623          	sw	a5,-20(s0)
+  60:	fec40793          	addi	a5,s0,-20
+  64:	00078513          	mv	a0,a5
+  68:	00000097          	auipc	ra,0x0
+  6c:	000080e7          	jalr	ra # 68 <.L0 +0x54>
+  70:	00050793          	mv	a5,a0
+  74:	00078513          	mv	a0,a5
+  78:	00000097          	auipc	ra,0x0
+  7c:	000080e7          	jalr	ra # 78 <.L0 +0x64>
+  80:	00050793          	mv	a5,a0
+  84:	0007a783          	lw	a5,0(a5)
+  88:	fef42223          	sw	a5,-28(s0)
+  8c:	fdc40713          	addi	a4,s0,-36
+  90:	fd840793          	addi	a5,s0,-40
+  94:	00070593          	mv	a1,a4
+  98:	00078513          	mv	a0,a5
+  9c:	00000097          	auipc	ra,0x0
+  a0:	000080e7          	jalr	ra # 9c <.L0 +0x88>
+  a4:	00050793          	mv	a5,a0
+  a8:	fff78493          	addi	s1,a5,-1
+  ac:	fe440793          	addi	a5,s0,-28
+  b0:	00078513          	mv	a0,a5
+  b4:	00000097          	auipc	ra,0x0
+  b8:	000080e7          	jalr	ra # b4 <.L0 +0xa0>
+  bc:	00050793          	mv	a5,a0
+  c0:	0007a783          	lw	a5,0(a5)
+  c4:	fe840713          	addi	a4,s0,-24
+  c8:	00078693          	mv	a3,a5
+  cc:	00000613          	li	a2,0
+  d0:	00048593          	mv	a1,s1
+  d4:	fdc42503          	lw	a0,-36(s0)
+  d8:	00000097          	auipc	ra,0x0
+  dc:	000080e7          	jalr	ra # d8 <.L0 +0xc4>
+  e0:	00000013          	nop
+  e4:	02c12083          	lw	ra,44(sp)
+
+000000e8 <.L0 >:
+  e8:	02812403          	lw	s0,40(sp)
+  ec:	02412483          	lw	s1,36(sp)
+  f0:	03010113          	addi	sp,sp,48
+  f4:	00008067          	ret
+
+Disassembly of section .text._ZNKSt6vectorIiSaIiEE5frontEv:
+
+00000000 <_ZNKSt6vectorIiSaIiEE5frontEv>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fdc42503          	lw	a0,-36(s0)
+  18:	00000097          	auipc	ra,0x0
+  1c:	000080e7          	jalr	ra # 18 <.L0 +0x8>
+  20:	00050793          	mv	a5,a0
+  24:	fef42623          	sw	a5,-20(s0)
+  28:	fec40793          	addi	a5,s0,-20
+  2c:	00078513          	mv	a0,a5
+  30:	00000097          	auipc	ra,0x0
+  34:	000080e7          	jalr	ra # 30 <.L0 +0x20>
+  38:	00050793          	mv	a5,a0
+  3c:	00000013          	nop
+  40:	00078513          	mv	a0,a5
+  44:	02c12083          	lw	ra,44(sp)
+
+00000048 <.L0 >:
+  48:	02812403          	lw	s0,40(sp)
+  4c:	03010113          	addi	sp,sp,48
+  50:	00008067          	ret
+
+Disassembly of section .text._ZSt4moveIRSt4lessIiEEONSt16remove_referenceIT_E4typeEOS4_:
+
+00000000 <_ZSt4moveIRSt4lessIiEEONSt16remove_referenceIT_E4typeEOS4_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	00078513          	mv	a0,a5
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZSt8pop_heapIN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEESt4lessIiEEvT_S9_T0_:
+
+00000000 <_ZSt8pop_heapIN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEESt4lessIiEEvT_S9_T0_>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fcb42c23          	sw	a1,-40(s0)
+  18:	fcc40a23          	sb	a2,-44(s0)
+  1c:	fdc40713          	addi	a4,s0,-36
+  20:	fd840793          	addi	a5,s0,-40
+  24:	00070593          	mv	a1,a4
+  28:	00078513          	mv	a0,a5
+  2c:	00000097          	auipc	ra,0x0
+  30:	000080e7          	jalr	ra # 2c <.L0 +0x1c>
+  34:	00050793          	mv	a5,a0
+  38:	0027a793          	slti	a5,a5,2
+  3c:	0017c793          	xori	a5,a5,1
+  40:	0ff7f793          	andi	a5,a5,255
+  44:	02078863          	beqz	a5,74 <.L71>
+  48:	fd840793          	addi	a5,s0,-40
+  4c:	00078513          	mv	a0,a5
+  50:	00000097          	auipc	ra,0x0
+  54:	000080e7          	jalr	ra # 50 <.L0 +0x40>
+  58:	fec40793          	addi	a5,s0,-20
+  5c:	00078693          	mv	a3,a5
+  60:	fd842603          	lw	a2,-40(s0)
+  64:	fd842583          	lw	a1,-40(s0)
+  68:	fdc42503          	lw	a0,-36(s0)
+  6c:	00000097          	auipc	ra,0x0
+  70:	000080e7          	jalr	ra # 6c <.L0 +0x5c>
+
+00000074 <.L71>:
+  74:	00000013          	nop
+  78:	02c12083          	lw	ra,44(sp)
+
+0000007c <.L0 >:
+  7c:	02812403          	lw	s0,40(sp)
+  80:	03010113          	addi	sp,sp,48
+  84:	00008067          	ret
+
+Disassembly of section .text._ZNSt6vectorIiSaIiEE8pop_backEv:
+
+00000000 <_ZNSt6vectorIiSaIiEE8pop_backEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42783          	lw	a5,-20(s0)
+  18:	0047a783          	lw	a5,4(a5)
+  1c:	ffc78713          	addi	a4,a5,-4
+  20:	fec42783          	lw	a5,-20(s0)
+  24:	00e7a223          	sw	a4,4(a5)
+  28:	fec42703          	lw	a4,-20(s0)
+  2c:	fec42783          	lw	a5,-20(s0)
+  30:	0047a783          	lw	a5,4(a5)
+  34:	00078593          	mv	a1,a5
+  38:	00070513          	mv	a0,a4
+  3c:	00000097          	auipc	ra,0x0
+  40:	000080e7          	jalr	ra # 3c <.L0 +0x2c>
+  44:	00000013          	nop
+  48:	01c12083          	lw	ra,28(sp)
+
+0000004c <.L0 >:
+  4c:	01812403          	lw	s0,24(sp)
+  50:	02010113          	addi	sp,sp,32
+  54:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx13new_allocatorIiEC2Ev:
+
+00000000 <_ZN9__gnu_cxx13new_allocatorIiEC1Ev>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	00000013          	nop
+  14:	01c12403          	lw	s0,28(sp)
+  18:	02010113          	addi	sp,sp,32
+  1c:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx13new_allocatorIiED2Ev:
+
+00000000 <_ZN9__gnu_cxx13new_allocatorIiED1Ev>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	00000013          	nop
+  14:	01c12403          	lw	s0,28(sp)
+  18:	02010113          	addi	sp,sp,32
+  1c:	00008067          	ret
+
+Disassembly of section .text._ZNSt12_Vector_baseIiSaIiEEC2ERKS0_:
+
+00000000 <_ZNSt12_Vector_baseIiSaIiEEC1ERKS0_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fec42783          	lw	a5,-20(s0)
+  1c:	fe842583          	lw	a1,-24(s0)
+  20:	00078513          	mv	a0,a5
+  24:	00000097          	auipc	ra,0x0
+  28:	000080e7          	jalr	ra # 24 <.L0 +0x14>
+  2c:	00000013          	nop
+  30:	01c12083          	lw	ra,28(sp)
+
+00000034 <.L0 >:
+  34:	01812403          	lw	s0,24(sp)
+  38:	02010113          	addi	sp,sp,32
+  3c:	00008067          	ret
+
+Disassembly of section .text._ZNKSt16initializer_listIiE5beginEv:
+
+00000000 <_ZNKSt16initializer_listIiE5beginEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	0007a783          	lw	a5,0(a5)
+  18:	00078513          	mv	a0,a5
+  1c:	01c12403          	lw	s0,28(sp)
+  20:	02010113          	addi	sp,sp,32
+  24:	00008067          	ret
+
+Disassembly of section .text._ZNKSt16initializer_listIiE3endEv:
+
+00000000 <_ZNKSt16initializer_listIiE3endEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	02010413          	addi	s0,sp,32
+
+00000014 <.L0 >:
+  14:	fea42623          	sw	a0,-20(s0)
+  18:	fec42503          	lw	a0,-20(s0)
+  1c:	00000097          	auipc	ra,0x0
+  20:	000080e7          	jalr	ra # 1c <.L0 +0x8>
+  24:	00050493          	mv	s1,a0
+  28:	fec42503          	lw	a0,-20(s0)
+  2c:	00000097          	auipc	ra,0x0
+  30:	000080e7          	jalr	ra # 2c <.L0 +0x18>
+  34:	00050793          	mv	a5,a0
+  38:	00279793          	slli	a5,a5,0x2
+  3c:	00f487b3          	add	a5,s1,a5
+  40:	00078513          	mv	a0,a5
+  44:	01c12083          	lw	ra,28(sp)
+
+00000048 <.L0 >:
+  48:	01812403          	lw	s0,24(sp)
+  4c:	01412483          	lw	s1,20(sp)
+  50:	02010113          	addi	sp,sp,32
+  54:	00008067          	ret
+
+Disassembly of section .text._ZNSt6vectorIiSaIiEE19_M_range_initializeIPKiEEvT_S5_St20forward_iterator_tag:
+
+00000000 <_ZNSt6vectorIiSaIiEE19_M_range_initializeIPKiEEvT_S5_St20forward_iterator_tag>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	02912223          	sw	s1,36(sp)
+  10:	03010413          	addi	s0,sp,48
+
+00000014 <.L0 >:
+  14:	fca42e23          	sw	a0,-36(s0)
+  18:	fcb42c23          	sw	a1,-40(s0)
+  1c:	fcc42a23          	sw	a2,-44(s0)
+  20:	fcd40823          	sb	a3,-48(s0)
+  24:	fd442583          	lw	a1,-44(s0)
+  28:	fd842503          	lw	a0,-40(s0)
+  2c:	00000097          	auipc	ra,0x0
+  30:	000080e7          	jalr	ra # 2c <.L0 +0x18>
+  34:	00050793          	mv	a5,a0
+  38:	fef42623          	sw	a5,-20(s0)
+  3c:	fdc42783          	lw	a5,-36(s0)
+  40:	fec42583          	lw	a1,-20(s0)
+  44:	00078513          	mv	a0,a5
+  48:	00000097          	auipc	ra,0x0
+  4c:	000080e7          	jalr	ra # 48 <.L0 +0x34>
+  50:	00050713          	mv	a4,a0
+  54:	fdc42783          	lw	a5,-36(s0)
+  58:	00e7a023          	sw	a4,0(a5)
+  5c:	fdc42783          	lw	a5,-36(s0)
+  60:	0007a703          	lw	a4,0(a5)
+  64:	fec42783          	lw	a5,-20(s0)
+  68:	00279793          	slli	a5,a5,0x2
+  6c:	00f70733          	add	a4,a4,a5
+  70:	fdc42783          	lw	a5,-36(s0)
+  74:	00e7a423          	sw	a4,8(a5)
+  78:	fdc42783          	lw	a5,-36(s0)
+  7c:	0007a483          	lw	s1,0(a5)
+  80:	fdc42783          	lw	a5,-36(s0)
+  84:	00078513          	mv	a0,a5
+  88:	00000097          	auipc	ra,0x0
+  8c:	000080e7          	jalr	ra # 88 <.L0 +0x74>
+  90:	00050793          	mv	a5,a0
+  94:	00078693          	mv	a3,a5
+  98:	00048613          	mv	a2,s1
+  9c:	fd442583          	lw	a1,-44(s0)
+  a0:	fd842503          	lw	a0,-40(s0)
+  a4:	00000097          	auipc	ra,0x0
+  a8:	000080e7          	jalr	ra # a4 <.L0 +0x90>
+  ac:	00050713          	mv	a4,a0
+  b0:	fdc42783          	lw	a5,-36(s0)
+  b4:	00e7a223          	sw	a4,4(a5)
+  b8:	00000013          	nop
+  bc:	02c12083          	lw	ra,44(sp)
+
+000000c0 <.L0 >:
+  c0:	02812403          	lw	s0,40(sp)
+  c4:	02412483          	lw	s1,36(sp)
+  c8:	03010113          	addi	sp,sp,48
+  cc:	00008067          	ret
+
+Disassembly of section .text._ZNSt12_Vector_baseIiSaIiEEC2Ev:
+
+00000000 <_ZNSt12_Vector_baseIiSaIiEEC1Ev>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42783          	lw	a5,-20(s0)
+  18:	00078513          	mv	a0,a5
+  1c:	00000097          	auipc	ra,0x0
+  20:	000080e7          	jalr	ra # 1c <.L0 +0xc>
+  24:	00000013          	nop
+  28:	01c12083          	lw	ra,28(sp)
+
+0000002c <.L0 >:
+  2c:	01812403          	lw	s0,24(sp)
+  30:	02010113          	addi	sp,sp,32
+  34:	00008067          	ret
+
+Disassembly of section .text._ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPij:
+
+00000000 <_ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPij>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fec42223          	sw	a2,-28(s0)
+  1c:	fe842783          	lw	a5,-24(s0)
+  20:	00078e63          	beqz	a5,3c <.L84>
+  24:	fec42783          	lw	a5,-20(s0)
+  28:	fe442603          	lw	a2,-28(s0)
+  2c:	fe842583          	lw	a1,-24(s0)
+  30:	00078513          	mv	a0,a5
+  34:	00000097          	auipc	ra,0x0
+  38:	000080e7          	jalr	ra # 34 <.L0 +0x24>
+
+0000003c <.L84>:
+  3c:	00000013          	nop
+  40:	01c12083          	lw	ra,28(sp)
+
+00000044 <.L0 >:
+  44:	01812403          	lw	s0,24(sp)
+  48:	02010113          	addi	sp,sp,32
+  4c:	00008067          	ret
+
+Disassembly of section .text._ZSt8_DestroyIPiEvT_S1_:
+
+00000000 <_ZSt8_DestroyIPiEvT_S1_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fe842583          	lw	a1,-24(s0)
+  1c:	fec42503          	lw	a0,-20(s0)
+  20:	00000097          	auipc	ra,0x0
+  24:	000080e7          	jalr	ra # 20 <.L0 +0x10>
+  28:	00000013          	nop
+  2c:	01c12083          	lw	ra,28(sp)
+
+00000030 <.L0 >:
+  30:	01812403          	lw	s0,24(sp)
+  34:	02010113          	addi	sp,sp,32
+  38:	00008067          	ret
+
+Disassembly of section .text._ZNSt16allocator_traitsISaIiEE9constructIiJRKiEEEvRS0_PT_DpOT0_:
+
+00000000 <_ZNSt16allocator_traitsISaIiEE9constructIiJRKiEEEvRS0_PT_DpOT0_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fec42223          	sw	a2,-28(s0)
+  1c:	fe442503          	lw	a0,-28(s0)
+  20:	00000097          	auipc	ra,0x0
+  24:	000080e7          	jalr	ra # 20 <.L0 +0x10>
+  28:	00050793          	mv	a5,a0
+  2c:	00078613          	mv	a2,a5
+  30:	fe842583          	lw	a1,-24(s0)
+  34:	fec42503          	lw	a0,-20(s0)
+  38:	00000097          	auipc	ra,0x0
+  3c:	000080e7          	jalr	ra # 38 <.L0 +0x28>
+  40:	00000013          	nop
+  44:	01c12083          	lw	ra,28(sp)
+
+00000048 <.L0 >:
+  48:	01812403          	lw	s0,24(sp)
+  4c:	02010113          	addi	sp,sp,32
+  50:	00008067          	ret
+
+Disassembly of section .text._ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_:
+
+00000000 <_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_>:
+   0:	fc010113          	addi	sp,sp,-64
+   4:	02112e23          	sw	ra,60(sp)
+   8:	02812c23          	sw	s0,56(sp)
+   c:	02912a23          	sw	s1,52(sp)
+  10:	03212823          	sw	s2,48(sp)
+  14:	04010413          	addi	s0,sp,64
+
+00000018 <.L0 >:
+  18:	fca42623          	sw	a0,-52(s0)
+  1c:	fcb42423          	sw	a1,-56(s0)
+  20:	fcc42223          	sw	a2,-60(s0)
+  24:	000007b7          	lui	a5,0x0
+  28:	00078613          	mv	a2,a5
+  2c:	00100593          	li	a1,1
+  30:	fcc42503          	lw	a0,-52(s0)
+
+00000034 <.LEHB7>:
+  34:	00000097          	auipc	ra,0x0
+  38:	000080e7          	jalr	ra # 34 <.LEHB7>
+  3c:	00050793          	mv	a5,a0
+  40:	fef42423          	sw	a5,-24(s0)
+  44:	fcc42783          	lw	a5,-52(s0)
+  48:	0007a783          	lw	a5,0(a5) # 0 <_ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT_>
+  4c:	fef42223          	sw	a5,-28(s0)
+  50:	fcc42783          	lw	a5,-52(s0)
+  54:	0047a783          	lw	a5,4(a5)
+  58:	fef42023          	sw	a5,-32(s0)
+  5c:	fcc42503          	lw	a0,-52(s0)
+  60:	00000097          	auipc	ra,0x0
+  64:	000080e7          	jalr	ra # 60 <.LEHB7+0x2c>
+  68:	00050793          	mv	a5,a0
+  6c:	fcf42a23          	sw	a5,-44(s0)
+  70:	fd440713          	addi	a4,s0,-44
+  74:	fc840793          	addi	a5,s0,-56
+  78:	00070593          	mv	a1,a4
+  7c:	00078513          	mv	a0,a5
+  80:	00000097          	auipc	ra,0x0
+  84:	000080e7          	jalr	ra # 80 <.LEHB7+0x4c>
+  88:	00050793          	mv	a5,a0
+  8c:	fcf42e23          	sw	a5,-36(s0)
+  90:	fcc42783          	lw	a5,-52(s0)
+  94:	fe842583          	lw	a1,-24(s0)
+  98:	00078513          	mv	a0,a5
+  9c:	00000097          	auipc	ra,0x0
+  a0:	000080e7          	jalr	ra # 9c <.LEHB7+0x68>
+
+000000a4 <.LEHE7>:
+  a4:	00050793          	mv	a5,a0
+  a8:	fcf42c23          	sw	a5,-40(s0)
+  ac:	fd842783          	lw	a5,-40(s0)
+  b0:	fef42623          	sw	a5,-20(s0)
+  b4:	fcc42483          	lw	s1,-52(s0)
+  b8:	fdc42783          	lw	a5,-36(s0)
+  bc:	00279793          	slli	a5,a5,0x2
+  c0:	fd842703          	lw	a4,-40(s0)
+  c4:	00f70933          	add	s2,a4,a5
+  c8:	fc442503          	lw	a0,-60(s0)
+  cc:	00000097          	auipc	ra,0x0
+  d0:	000080e7          	jalr	ra # cc <.LEHE7+0x28>
+  d4:	00050793          	mv	a5,a0
+  d8:	00078613          	mv	a2,a5
+  dc:	00090593          	mv	a1,s2
+  e0:	00048513          	mv	a0,s1
+  e4:	00000097          	auipc	ra,0x0
+  e8:	000080e7          	jalr	ra # e4 <.LEHE7+0x40>
+  ec:	fe042623          	sw	zero,-20(s0)
+  f0:	fc840793          	addi	a5,s0,-56
+  f4:	00078513          	mv	a0,a5
+  f8:	00000097          	auipc	ra,0x0
+  fc:	000080e7          	jalr	ra # f8 <.LEHE7+0x54>
+ 100:	00050793          	mv	a5,a0
+ 104:	0007a483          	lw	s1,0(a5)
+ 108:	fcc42783          	lw	a5,-52(s0)
+ 10c:	00078513          	mv	a0,a5
+ 110:	00000097          	auipc	ra,0x0
+ 114:	000080e7          	jalr	ra # 110 <.LEHE7+0x6c>
+ 118:	00050793          	mv	a5,a0
+ 11c:	00078693          	mv	a3,a5
+ 120:	fd842603          	lw	a2,-40(s0)
+ 124:	00048593          	mv	a1,s1
+ 128:	fe442503          	lw	a0,-28(s0)
+
+0000012c <.LEHB8>:
+ 12c:	00000097          	auipc	ra,0x0
+ 130:	000080e7          	jalr	ra # 12c <.LEHB8>
+ 134:	00050793          	mv	a5,a0
+ 138:	fef42623          	sw	a5,-20(s0)
+ 13c:	fec42783          	lw	a5,-20(s0)
+ 140:	00478793          	addi	a5,a5,4
+ 144:	fef42623          	sw	a5,-20(s0)
+ 148:	fc840793          	addi	a5,s0,-56
+ 14c:	00078513          	mv	a0,a5
+ 150:	00000097          	auipc	ra,0x0
+ 154:	000080e7          	jalr	ra # 150 <.LEHB8+0x24>
+ 158:	00050793          	mv	a5,a0
+ 15c:	0007a483          	lw	s1,0(a5)
+ 160:	fcc42783          	lw	a5,-52(s0)
+ 164:	00078513          	mv	a0,a5
+ 168:	00000097          	auipc	ra,0x0
+ 16c:	000080e7          	jalr	ra # 168 <.LEHB8+0x3c>
+ 170:	00050793          	mv	a5,a0
+ 174:	00078693          	mv	a3,a5
+ 178:	fec42603          	lw	a2,-20(s0)
+ 17c:	fe042583          	lw	a1,-32(s0)
+ 180:	00048513          	mv	a0,s1
+ 184:	00000097          	auipc	ra,0x0
+ 188:	000080e7          	jalr	ra # 184 <.LEHB8+0x58>
+
+0000018c <.LEHE8>:
+ 18c:	00050793          	mv	a5,a0
+ 190:	fef42623          	sw	a5,-20(s0)
+ 194:	fcc42783          	lw	a5,-52(s0)
+ 198:	00078513          	mv	a0,a5
+ 19c:	00000097          	auipc	ra,0x0
+ 1a0:	000080e7          	jalr	ra # 19c <.LEHE8+0x10>
+ 1a4:	00050793          	mv	a5,a0
+ 1a8:	00078613          	mv	a2,a5
+ 1ac:	fe042583          	lw	a1,-32(s0)
+ 1b0:	fe442503          	lw	a0,-28(s0)
+
+000001b4 <.LEHB9>:
+ 1b4:	00000097          	auipc	ra,0x0
+ 1b8:	000080e7          	jalr	ra # 1b4 <.LEHB9>
+ 1bc:	fcc42683          	lw	a3,-52(s0)
+ 1c0:	fcc42783          	lw	a5,-52(s0)
+ 1c4:	0087a703          	lw	a4,8(a5)
+ 1c8:	fe442783          	lw	a5,-28(s0)
+ 1cc:	40f707b3          	sub	a5,a4,a5
+ 1d0:	4027d793          	srai	a5,a5,0x2
+ 1d4:	00078613          	mv	a2,a5
+ 1d8:	fe442583          	lw	a1,-28(s0)
+ 1dc:	00068513          	mv	a0,a3
+ 1e0:	00000097          	auipc	ra,0x0
+ 1e4:	000080e7          	jalr	ra # 1e0 <.LEHB9+0x2c>
+
+000001e8 <.LEHE9>:
+ 1e8:	fcc42783          	lw	a5,-52(s0)
+ 1ec:	fd842703          	lw	a4,-40(s0)
+ 1f0:	00e7a023          	sw	a4,0(a5)
+ 1f4:	fcc42783          	lw	a5,-52(s0)
+ 1f8:	fec42703          	lw	a4,-20(s0)
+ 1fc:	00e7a223          	sw	a4,4(a5)
+ 200:	fe842783          	lw	a5,-24(s0)
+ 204:	00279793          	slli	a5,a5,0x2
+ 208:	fd842703          	lw	a4,-40(s0)
+ 20c:	00f70733          	add	a4,a4,a5
+ 210:	fcc42783          	lw	a5,-52(s0)
+ 214:	00e7a423          	sw	a4,8(a5)
+ 218:	0a80006f          	j	2c0 <.L94>
+
+0000021c <.L92>:
+ 21c:	00050793          	mv	a5,a0
+ 220:	00078513          	mv	a0,a5
+ 224:	00000097          	auipc	ra,0x0
+ 228:	000080e7          	jalr	ra # 224 <.L92+0x8>
+ 22c:	fec42783          	lw	a5,-20(s0)
+ 230:	02079663          	bnez	a5,25c <.L89>
+ 234:	fcc42683          	lw	a3,-52(s0)
+ 238:	fdc42783          	lw	a5,-36(s0)
+ 23c:	00279793          	slli	a5,a5,0x2
+ 240:	fd842703          	lw	a4,-40(s0)
+ 244:	00f707b3          	add	a5,a4,a5
+ 248:	00078593          	mv	a1,a5
+ 24c:	00068513          	mv	a0,a3
+
+00000250 <.LEHB10>:
+ 250:	00000097          	auipc	ra,0x0
+ 254:	000080e7          	jalr	ra # 250 <.LEHB10>
+ 258:	02c0006f          	j	284 <.L90>
+
+0000025c <.L89>:
+ 25c:	fcc42783          	lw	a5,-52(s0)
+ 260:	00078513          	mv	a0,a5
+ 264:	00000097          	auipc	ra,0x0
+ 268:	000080e7          	jalr	ra # 264 <.L89+0x8>
+ 26c:	00050793          	mv	a5,a0
+ 270:	00078613          	mv	a2,a5
+ 274:	fec42583          	lw	a1,-20(s0)
+ 278:	fd842503          	lw	a0,-40(s0)
+ 27c:	00000097          	auipc	ra,0x0
+ 280:	000080e7          	jalr	ra # 27c <.L89+0x20>
+
+00000284 <.L90>:
+ 284:	fcc42783          	lw	a5,-52(s0)
+ 288:	fe842603          	lw	a2,-24(s0)
+ 28c:	fd842583          	lw	a1,-40(s0)
+ 290:	00078513          	mv	a0,a5
+ 294:	00000097          	auipc	ra,0x0
+ 298:	000080e7          	jalr	ra # 294 <.L90+0x10>
+ 29c:	00000097          	auipc	ra,0x0
+ 2a0:	000080e7          	jalr	ra # 29c <.L90+0x18>
+
+000002a4 <.L93>:
+ 2a4:	00050493          	mv	s1,a0
+ 2a8:	00000097          	auipc	ra,0x0
+ 2ac:	000080e7          	jalr	ra # 2a8 <.L93+0x4>
+ 2b0:	00048793          	mv	a5,s1
+ 2b4:	00078513          	mv	a0,a5
+
+000002b8 <.LEHB11>:
+ 2b8:	00000097          	auipc	ra,0x0
+ 2bc:	000080e7          	jalr	ra # 2b8 <.LEHB11>
+
+000002c0 <.L94>:
+ 2c0:	03c12083          	lw	ra,60(sp)
+
+000002c4 <.L0 >:
+ 2c4:	03812403          	lw	s0,56(sp)
+ 2c8:	03412483          	lw	s1,52(sp)
+ 2cc:	03012903          	lw	s2,48(sp)
+ 2d0:	04010113          	addi	sp,sp,64
+ 2d4:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx5__ops14_Iter_comp_valISt4lessIiEEC2ES3_:
+
+00000000 <_ZN9__gnu_cxx5__ops14_Iter_comp_valISt4lessIiEEC1ES3_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb40423          	sb	a1,-24(s0)
+  18:	fe840793          	addi	a5,s0,-24
+  1c:	00078513          	mv	a0,a5
+  20:	00000097          	auipc	ra,0x0
+  24:	000080e7          	jalr	ra # 20 <.L0 +0x10>
+  28:	00000013          	nop
+  2c:	01c12083          	lw	ra,28(sp)
+
+00000030 <.L0 >:
+  30:	01812403          	lw	s0,24(sp)
+  34:	02010113          	addi	sp,sp,32
+  38:	00008067          	ret
+
+Disassembly of section .text._ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEmiEi:
+
+00000000 <_ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEmiEi>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fcb42c23          	sw	a1,-40(s0)
+  18:	fdc42783          	lw	a5,-36(s0)
+  1c:	0007a703          	lw	a4,0(a5)
+  20:	fd842783          	lw	a5,-40(s0)
+  24:	00279793          	slli	a5,a5,0x2
+  28:	40f007b3          	neg	a5,a5
+  2c:	00f707b3          	add	a5,a4,a5
+  30:	fef42623          	sw	a5,-20(s0)
+  34:	fec40713          	addi	a4,s0,-20
+  38:	fe840793          	addi	a5,s0,-24
+  3c:	00070593          	mv	a1,a4
+  40:	00078513          	mv	a0,a5
+  44:	00000097          	auipc	ra,0x0
+  48:	000080e7          	jalr	ra # 44 <.L0 +0x34>
+  4c:	fe842783          	lw	a5,-24(s0)
+  50:	00078513          	mv	a0,a5
+  54:	02c12083          	lw	ra,44(sp)
+
+00000058 <.L0 >:
+  58:	02812403          	lw	s0,40(sp)
+  5c:	03010113          	addi	sp,sp,48
+  60:	00008067          	ret
+
+Disassembly of section .text._ZSt4moveIRiEONSt16remove_referenceIT_E4typeEOS2_:
+
+00000000 <_ZSt4moveIRiEONSt16remove_referenceIT_E4typeEOS2_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	00078513          	mv	a0,a5
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxxmiIPiSt6vectorIiSaIiEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKS8_SB_:
+
+00000000 <_ZN9__gnu_cxxmiIPiSt6vectorIiSaIiEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKS8_SB_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	02010413          	addi	s0,sp,32
+
+00000014 <.L0 >:
+  14:	fea42623          	sw	a0,-20(s0)
+  18:	feb42423          	sw	a1,-24(s0)
+  1c:	fec42503          	lw	a0,-20(s0)
+  20:	00000097          	auipc	ra,0x0
+  24:	000080e7          	jalr	ra # 20 <.L0 +0xc>
+  28:	00050793          	mv	a5,a0
+  2c:	0007a483          	lw	s1,0(a5)
+  30:	fe842503          	lw	a0,-24(s0)
+  34:	00000097          	auipc	ra,0x0
+  38:	000080e7          	jalr	ra # 34 <.L0 +0x20>
+  3c:	00050793          	mv	a5,a0
+  40:	0007a783          	lw	a5,0(a5)
+  44:	40f487b3          	sub	a5,s1,a5
+  48:	4027d793          	srai	a5,a5,0x2
+  4c:	00078513          	mv	a0,a5
+  50:	01c12083          	lw	ra,28(sp)
+
+00000054 <.L0 >:
+  54:	01812403          	lw	s0,24(sp)
+  58:	01412483          	lw	s1,20(sp)
+  5c:	02010113          	addi	sp,sp,32
+  60:	00008067          	ret
+
+Disassembly of section .text._ZSt11__push_heapIN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEEiiNS0_5__ops14_Iter_comp_valISt4lessIiEEEEvT_T0_SD_T1_RT2_:
+
+00000000 <_ZSt11__push_heapIN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEEiiNS0_5__ops14_Iter_comp_valISt4lessIiEEEEvT_T0_SD_T1_RT2_>:
+   0:	fc010113          	addi	sp,sp,-64
+   4:	02112e23          	sw	ra,60(sp)
+   8:	02812c23          	sw	s0,56(sp)
+   c:	02912a23          	sw	s1,52(sp)
+  10:	04010413          	addi	s0,sp,64
+
+00000014 <.L0 >:
+  14:	fca42e23          	sw	a0,-36(s0)
+  18:	fcb42c23          	sw	a1,-40(s0)
+  1c:	fcc42a23          	sw	a2,-44(s0)
+  20:	fcd42823          	sw	a3,-48(s0)
+  24:	fce42623          	sw	a4,-52(s0)
+  28:	fd842783          	lw	a5,-40(s0)
+  2c:	fff78793          	addi	a5,a5,-1
+  30:	01f7d713          	srli	a4,a5,0x1f
+  34:	00f707b3          	add	a5,a4,a5
+  38:	4017d793          	srai	a5,a5,0x1
+  3c:	fef42623          	sw	a5,-20(s0)
+
+00000040 <.L106>:
+  40:	fd842703          	lw	a4,-40(s0)
+  44:	fd442783          	lw	a5,-44(s0)
+  48:	04e7d263          	bge	a5,a4,8c <.L103>
+  4c:	fdc40793          	addi	a5,s0,-36
+  50:	fec42583          	lw	a1,-20(s0)
+  54:	00078513          	mv	a0,a5
+  58:	00000097          	auipc	ra,0x0
+  5c:	000080e7          	jalr	ra # 58 <.L106+0x18>
+  60:	00050713          	mv	a4,a0
+  64:	fd040793          	addi	a5,s0,-48
+  68:	00078613          	mv	a2,a5
+  6c:	00070593          	mv	a1,a4
+  70:	fcc42503          	lw	a0,-52(s0)
+  74:	00000097          	auipc	ra,0x0
+  78:	000080e7          	jalr	ra # 74 <.L106+0x34>
+  7c:	00050793          	mv	a5,a0
+  80:	00078663          	beqz	a5,8c <.L103>
+  84:	00100793          	li	a5,1
+  88:	0080006f          	j	90 <.L104>
+
+0000008c <.L103>:
+  8c:	00000793          	li	a5,0
+
+00000090 <.L104>:
+  90:	0a078063          	beqz	a5,130 <.L105>
+  94:	fdc40793          	addi	a5,s0,-36
+  98:	fec42583          	lw	a1,-20(s0)
+  9c:	00078513          	mv	a0,a5
+  a0:	00000097          	auipc	ra,0x0
+  a4:	000080e7          	jalr	ra # a0 <.L104+0x10>
+  a8:	00050793          	mv	a5,a0
+  ac:	fef42023          	sw	a5,-32(s0)
+  b0:	fe040793          	addi	a5,s0,-32
+  b4:	00078513          	mv	a0,a5
+  b8:	00000097          	auipc	ra,0x0
+  bc:	000080e7          	jalr	ra # b8 <.L104+0x28>
+  c0:	00050793          	mv	a5,a0
+  c4:	00078513          	mv	a0,a5
+  c8:	00000097          	auipc	ra,0x0
+  cc:	000080e7          	jalr	ra # c8 <.L104+0x38>
+  d0:	00050493          	mv	s1,a0
+  d4:	fdc40793          	addi	a5,s0,-36
+  d8:	fd842583          	lw	a1,-40(s0)
+  dc:	00078513          	mv	a0,a5
+  e0:	00000097          	auipc	ra,0x0
+  e4:	000080e7          	jalr	ra # e0 <.L104+0x50>
+  e8:	00050793          	mv	a5,a0
+  ec:	fef42223          	sw	a5,-28(s0)
+  f0:	fe440793          	addi	a5,s0,-28
+  f4:	00078513          	mv	a0,a5
+  f8:	00000097          	auipc	ra,0x0
+  fc:	000080e7          	jalr	ra # f8 <.L104+0x68>
+ 100:	00050713          	mv	a4,a0
+ 104:	0004a783          	lw	a5,0(s1)
+ 108:	00f72023          	sw	a5,0(a4)
+ 10c:	fec42783          	lw	a5,-20(s0)
+ 110:	fcf42c23          	sw	a5,-40(s0)
+ 114:	fd842783          	lw	a5,-40(s0)
+ 118:	fff78793          	addi	a5,a5,-1
+ 11c:	01f7d713          	srli	a4,a5,0x1f
+ 120:	00f707b3          	add	a5,a4,a5
+ 124:	4017d793          	srai	a5,a5,0x1
+ 128:	fef42623          	sw	a5,-20(s0)
+ 12c:	f15ff06f          	j	40 <.L106>
+
+00000130 <.L105>:
+ 130:	fd040793          	addi	a5,s0,-48
+ 134:	00078513          	mv	a0,a5
+ 138:	00000097          	auipc	ra,0x0
+ 13c:	000080e7          	jalr	ra # 138 <.L105+0x8>
+ 140:	00050493          	mv	s1,a0
+ 144:	fdc40793          	addi	a5,s0,-36
+ 148:	fd842583          	lw	a1,-40(s0)
+ 14c:	00078513          	mv	a0,a5
+ 150:	00000097          	auipc	ra,0x0
+ 154:	000080e7          	jalr	ra # 150 <.L105+0x20>
+ 158:	00050793          	mv	a5,a0
+ 15c:	fef42423          	sw	a5,-24(s0)
+ 160:	fe840793          	addi	a5,s0,-24
+ 164:	00078513          	mv	a0,a5
+ 168:	00000097          	auipc	ra,0x0
+ 16c:	000080e7          	jalr	ra # 168 <.L105+0x38>
+ 170:	00050713          	mv	a4,a0
+ 174:	0004a783          	lw	a5,0(s1)
+ 178:	00f72023          	sw	a5,0(a4)
+ 17c:	00000013          	nop
+ 180:	03c12083          	lw	ra,60(sp)
+
+00000184 <.L0 >:
+ 184:	03812403          	lw	s0,56(sp)
+ 188:	03412483          	lw	s1,52(sp)
+ 18c:	04010113          	addi	sp,sp,64
+ 190:	00008067          	ret
+
+Disassembly of section .text._ZNKSt6vectorIiSaIiEE5beginEv:
+
+00000000 <_ZNKSt6vectorIiSaIiEE5beginEv>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fdc42783          	lw	a5,-36(s0)
+  18:	0007a783          	lw	a5,0(a5)
+  1c:	fef42623          	sw	a5,-20(s0)
+  20:	fec40713          	addi	a4,s0,-20
+  24:	fe840793          	addi	a5,s0,-24
+  28:	00070593          	mv	a1,a4
+  2c:	00078513          	mv	a0,a5
+  30:	00000097          	auipc	ra,0x0
+  34:	000080e7          	jalr	ra # 30 <.L0 +0x20>
+  38:	fe842783          	lw	a5,-24(s0)
+  3c:	00078513          	mv	a0,a5
+  40:	02c12083          	lw	ra,44(sp)
+
+00000044 <.L0 >:
+  44:	02812403          	lw	s0,40(sp)
+  48:	03010113          	addi	sp,sp,48
+  4c:	00008067          	ret
+
+Disassembly of section .text._ZNK9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEdeEv:
+
+00000000 <_ZNK9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEdeEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	0007a783          	lw	a5,0(a5)
+  18:	00078513          	mv	a0,a5
+  1c:	01c12403          	lw	s0,28(sp)
+  20:	02010113          	addi	sp,sp,32
+  24:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEmmEv:
+
+00000000 <_ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEmmEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	0007a783          	lw	a5,0(a5)
+  18:	ffc78713          	addi	a4,a5,-4
+  1c:	fec42783          	lw	a5,-20(s0)
+  20:	00e7a023          	sw	a4,0(a5)
+  24:	fec42783          	lw	a5,-20(s0)
+  28:	00078513          	mv	a0,a5
+  2c:	01c12403          	lw	s0,28(sp)
+  30:	02010113          	addi	sp,sp,32
+  34:	00008067          	ret
+
+Disassembly of section .text._ZSt10__pop_heapIN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEENS0_5__ops15_Iter_comp_iterISt4lessIiEEEEvT_SC_SC_RT0_:
+
+00000000 <_ZSt10__pop_heapIN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEENS0_5__ops15_Iter_comp_iterISt4lessIiEEEEvT_SC_SC_RT0_>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	02912223          	sw	s1,36(sp)
+  10:	03010413          	addi	s0,sp,48
+
+00000014 <.L0 >:
+  14:	fca42e23          	sw	a0,-36(s0)
+  18:	fcb42c23          	sw	a1,-40(s0)
+  1c:	fcc42a23          	sw	a2,-44(s0)
+  20:	fcd42823          	sw	a3,-48(s0)
+  24:	fd440793          	addi	a5,s0,-44
+  28:	00078513          	mv	a0,a5
+  2c:	00000097          	auipc	ra,0x0
+  30:	000080e7          	jalr	ra # 2c <.L0 +0x18>
+  34:	00050793          	mv	a5,a0
+  38:	00078513          	mv	a0,a5
+  3c:	00000097          	auipc	ra,0x0
+  40:	000080e7          	jalr	ra # 3c <.L0 +0x28>
+  44:	00050793          	mv	a5,a0
+  48:	0007a783          	lw	a5,0(a5)
+  4c:	fef42623          	sw	a5,-20(s0)
+  50:	fdc40793          	addi	a5,s0,-36
+  54:	00078513          	mv	a0,a5
+  58:	00000097          	auipc	ra,0x0
+  5c:	000080e7          	jalr	ra # 58 <.L0 +0x44>
+  60:	00050793          	mv	a5,a0
+  64:	00078513          	mv	a0,a5
+  68:	00000097          	auipc	ra,0x0
+  6c:	000080e7          	jalr	ra # 68 <.L0 +0x54>
+  70:	00050493          	mv	s1,a0
+  74:	fd440793          	addi	a5,s0,-44
+  78:	00078513          	mv	a0,a5
+  7c:	00000097          	auipc	ra,0x0
+  80:	000080e7          	jalr	ra # 7c <.L0 +0x68>
+  84:	00050713          	mv	a4,a0
+  88:	0004a783          	lw	a5,0(s1)
+  8c:	00f72023          	sw	a5,0(a4)
+  90:	fdc40713          	addi	a4,s0,-36
+  94:	fd840793          	addi	a5,s0,-40
+  98:	00070593          	mv	a1,a4
+  9c:	00078513          	mv	a0,a5
+  a0:	00000097          	auipc	ra,0x0
+  a4:	000080e7          	jalr	ra # a0 <.L0 +0x8c>
+  a8:	00050493          	mv	s1,a0
+  ac:	fec40793          	addi	a5,s0,-20
+  b0:	00078513          	mv	a0,a5
+  b4:	00000097          	auipc	ra,0x0
+  b8:	000080e7          	jalr	ra # b4 <.L0 +0xa0>
+  bc:	00050793          	mv	a5,a0
+  c0:	0007a683          	lw	a3,0(a5)
+  c4:	fd042783          	lw	a5,-48(s0)
+  c8:	0007c703          	lbu	a4,0(a5)
+  cc:	00048613          	mv	a2,s1
+  d0:	00000593          	li	a1,0
+  d4:	fdc42503          	lw	a0,-36(s0)
+  d8:	00000097          	auipc	ra,0x0
+  dc:	000080e7          	jalr	ra # d8 <.L0 +0xc4>
+  e0:	00000013          	nop
+  e4:	02c12083          	lw	ra,44(sp)
+
+000000e8 <.L0 >:
+  e8:	02812403          	lw	s0,40(sp)
+  ec:	02412483          	lw	s1,36(sp)
+  f0:	03010113          	addi	sp,sp,48
+  f4:	00008067          	ret
+
+Disassembly of section .text._ZNSt16allocator_traitsISaIiEE7destroyIiEEvRS0_PT_:
+
+00000000 <_ZNSt16allocator_traitsISaIiEE7destroyIiEEvRS0_PT_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fe842583          	lw	a1,-24(s0)
+  1c:	fec42503          	lw	a0,-20(s0)
+  20:	00000097          	auipc	ra,0x0
+  24:	000080e7          	jalr	ra # 20 <.L0 +0x10>
+  28:	00000013          	nop
+  2c:	01c12083          	lw	ra,28(sp)
+
+00000030 <.L0 >:
+  30:	01812403          	lw	s0,24(sp)
+  34:	02010113          	addi	sp,sp,32
+  38:	00008067          	ret
+
+Disassembly of section .text._ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2ERKS0_:
+
+00000000 <_ZNSt12_Vector_baseIiSaIiEE12_Vector_implC1ERKS0_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fe842583          	lw	a1,-24(s0)
+  1c:	fec42503          	lw	a0,-20(s0)
+  20:	00000097          	auipc	ra,0x0
+  24:	000080e7          	jalr	ra # 20 <.L0 +0x10>
+  28:	fec42783          	lw	a5,-20(s0)
+  2c:	0007a023          	sw	zero,0(a5)
+  30:	fec42783          	lw	a5,-20(s0)
+  34:	0007a223          	sw	zero,4(a5)
+  38:	fec42783          	lw	a5,-20(s0)
+  3c:	0007a423          	sw	zero,8(a5)
+  40:	00000013          	nop
+  44:	01c12083          	lw	ra,28(sp)
+
+00000048 <.L0 >:
+  48:	01812403          	lw	s0,24(sp)
+  4c:	02010113          	addi	sp,sp,32
+  50:	00008067          	ret
+
+Disassembly of section .text._ZNKSt16initializer_listIiE4sizeEv:
+
+00000000 <_ZNKSt16initializer_listIiE4sizeEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	0047a783          	lw	a5,4(a5)
+  18:	00078513          	mv	a0,a5
+  1c:	01c12403          	lw	s0,28(sp)
+  20:	02010113          	addi	sp,sp,32
+  24:	00008067          	ret
+
+Disassembly of section .text._ZSt8distanceIPKiENSt15iterator_traitsIT_E15difference_typeES3_S3_:
+
+00000000 <_ZSt8distanceIPKiENSt15iterator_traitsIT_E15difference_typeES3_S3_>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	02912223          	sw	s1,36(sp)
+  10:	03212023          	sw	s2,32(sp)
+  14:	03010413          	addi	s0,sp,48
+
+00000018 <.L0 >:
+  18:	fca42e23          	sw	a0,-36(s0)
+  1c:	fcb42c23          	sw	a1,-40(s0)
+  20:	fdc42483          	lw	s1,-36(s0)
+  24:	fdc40793          	addi	a5,s0,-36
+  28:	00078513          	mv	a0,a5
+  2c:	00000097          	auipc	ra,0x0
+  30:	000080e7          	jalr	ra # 2c <.L0 +0x14>
+  34:	00090613          	mv	a2,s2
+  38:	fd842583          	lw	a1,-40(s0)
+  3c:	00048513          	mv	a0,s1
+  40:	00000097          	auipc	ra,0x0
+  44:	000080e7          	jalr	ra # 40 <.L0 +0x28>
+  48:	00050793          	mv	a5,a0
+  4c:	00000013          	nop
+  50:	00078513          	mv	a0,a5
+  54:	02c12083          	lw	ra,44(sp)
+
+00000058 <.L0 >:
+  58:	02812403          	lw	s0,40(sp)
+  5c:	02412483          	lw	s1,36(sp)
+  60:	02012903          	lw	s2,32(sp)
+  64:	03010113          	addi	sp,sp,48
+  68:	00008067          	ret
+
+Disassembly of section .text._ZNSt12_Vector_baseIiSaIiEE11_M_allocateEj:
+
+00000000 <_ZNSt12_Vector_baseIiSaIiEE11_M_allocateEj>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fe842783          	lw	a5,-24(s0)
+  1c:	02078063          	beqz	a5,3c <.L121>
+  20:	fec42783          	lw	a5,-20(s0)
+  24:	fe842583          	lw	a1,-24(s0)
+  28:	00078513          	mv	a0,a5
+  2c:	00000097          	auipc	ra,0x0
+  30:	000080e7          	jalr	ra # 2c <.L0 +0x1c>
+  34:	00050793          	mv	a5,a0
+  38:	0080006f          	j	40 <.L123>
+
+0000003c <.L121>:
+  3c:	00000793          	li	a5,0
+
+00000040 <.L123>:
+  40:	00078513          	mv	a0,a5
+  44:	01c12083          	lw	ra,28(sp)
+
+00000048 <.L0 >:
+  48:	01812403          	lw	s0,24(sp)
+  4c:	02010113          	addi	sp,sp,32
+  50:	00008067          	ret
+
+Disassembly of section .text._ZSt22__uninitialized_copy_aIPKiPiiET0_T_S4_S3_RSaIT1_E:
+
+00000000 <_ZSt22__uninitialized_copy_aIPKiPiiET0_T_S4_S3_RSaIT1_E>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fec42223          	sw	a2,-28(s0)
+  1c:	fed42023          	sw	a3,-32(s0)
+  20:	fe442603          	lw	a2,-28(s0)
+  24:	fe842583          	lw	a1,-24(s0)
+  28:	fec42503          	lw	a0,-20(s0)
+  2c:	00000097          	auipc	ra,0x0
+  30:	000080e7          	jalr	ra # 2c <.L0 +0x1c>
+  34:	00050793          	mv	a5,a0
+  38:	00078513          	mv	a0,a5
+  3c:	01c12083          	lw	ra,28(sp)
+
+00000040 <.L0 >:
+  40:	01812403          	lw	s0,24(sp)
+  44:	02010113          	addi	sp,sp,32
+  48:	00008067          	ret
+
+Disassembly of section .text._ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2Ev:
+
+00000000 <_ZNSt12_Vector_baseIiSaIiEE12_Vector_implC1Ev>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42503          	lw	a0,-20(s0)
+  18:	00000097          	auipc	ra,0x0
+  1c:	000080e7          	jalr	ra # 18 <.L0 +0x8>
+  20:	fec42783          	lw	a5,-20(s0)
+  24:	0007a023          	sw	zero,0(a5)
+  28:	fec42783          	lw	a5,-20(s0)
+  2c:	0007a223          	sw	zero,4(a5)
+  30:	fec42783          	lw	a5,-20(s0)
+  34:	0007a423          	sw	zero,8(a5)
+  38:	00000013          	nop
+  3c:	01c12083          	lw	ra,28(sp)
+
+00000040 <.L0 >:
+  40:	01812403          	lw	s0,24(sp)
+  44:	02010113          	addi	sp,sp,32
+  48:	00008067          	ret
+
+Disassembly of section .text._ZNSt16allocator_traitsISaIiEE10deallocateERS0_Pij:
+
+00000000 <_ZNSt16allocator_traitsISaIiEE10deallocateERS0_Pij>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fec42223          	sw	a2,-28(s0)
+  1c:	fe442603          	lw	a2,-28(s0)
+  20:	fe842583          	lw	a1,-24(s0)
+  24:	fec42503          	lw	a0,-20(s0)
+  28:	00000097          	auipc	ra,0x0
+  2c:	000080e7          	jalr	ra # 28 <.L0 +0x18>
+  30:	00000013          	nop
+  34:	01c12083          	lw	ra,28(sp)
+
+00000038 <.L0 >:
+  38:	01812403          	lw	s0,24(sp)
+  3c:	02010113          	addi	sp,sp,32
+  40:	00008067          	ret
+
+Disassembly of section .text._ZNSt12_Destroy_auxILb1EE9__destroyIPiEEvT_S3_:
+
+00000000 <_ZNSt12_Destroy_auxILb1EE9__destroyIPiEEvT_S3_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	feb42423          	sw	a1,-24(s0)
+  14:	00000013          	nop
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZSt7forwardIRKiEOT_RNSt16remove_referenceIS2_E4typeE:
+
+00000000 <_ZSt7forwardIRKiEOT_RNSt16remove_referenceIS2_E4typeE>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	00078513          	mv	a0,a5
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx13new_allocatorIiE9constructIiJRKiEEEvPT_DpOT0_:
+
+00000000 <_ZN9__gnu_cxx13new_allocatorIiE9constructIiJRKiEEEvPT_DpOT0_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	02010413          	addi	s0,sp,32
+
+00000014 <.L0 >:
+  14:	fea42623          	sw	a0,-20(s0)
+  18:	feb42423          	sw	a1,-24(s0)
+  1c:	fec42223          	sw	a2,-28(s0)
+  20:	fe442503          	lw	a0,-28(s0)
+  24:	00000097          	auipc	ra,0x0
+  28:	000080e7          	jalr	ra # 24 <.L0 +0x10>
+  2c:	00050793          	mv	a5,a0
+  30:	0007a483          	lw	s1,0(a5)
+  34:	fe842783          	lw	a5,-24(s0)
+  38:	00078593          	mv	a1,a5
+  3c:	00400513          	li	a0,4
+  40:	00000097          	auipc	ra,0x0
+  44:	000080e7          	jalr	ra # 40 <.L0 +0x2c>
+  48:	00050793          	mv	a5,a0
+  4c:	0097a023          	sw	s1,0(a5)
+  50:	00000013          	nop
+  54:	01c12083          	lw	ra,28(sp)
+
+00000058 <.L0 >:
+  58:	01812403          	lw	s0,24(sp)
+  5c:	01412483          	lw	s1,20(sp)
+  60:	02010113          	addi	sp,sp,32
+  64:	00008067          	ret
+
+Disassembly of section .text._ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc:
+
+00000000 <_ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	02912223          	sw	s1,36(sp)
+  10:	03010413          	addi	s0,sp,48
+
+00000014 <.L0 >:
+  14:	fca42e23          	sw	a0,-36(s0)
+  18:	fcb42c23          	sw	a1,-40(s0)
+  1c:	fcc42a23          	sw	a2,-44(s0)
+  20:	fdc42503          	lw	a0,-36(s0)
+  24:	00000097          	auipc	ra,0x0
+  28:	000080e7          	jalr	ra # 24 <.L0 +0x10>
+  2c:	00050493          	mv	s1,a0
+  30:	fdc42503          	lw	a0,-36(s0)
+  34:	00000097          	auipc	ra,0x0
+  38:	000080e7          	jalr	ra # 34 <.L0 +0x20>
+  3c:	00050793          	mv	a5,a0
+  40:	40f48733          	sub	a4,s1,a5
+  44:	fd842783          	lw	a5,-40(s0)
+  48:	00f737b3          	sltu	a5,a4,a5
+  4c:	0ff7f793          	andi	a5,a5,255
+  50:	00078a63          	beqz	a5,64 <.L133>
+  54:	fd442783          	lw	a5,-44(s0)
+  58:	00078513          	mv	a0,a5
+  5c:	00000097          	auipc	ra,0x0
+  60:	000080e7          	jalr	ra # 5c <.L0 +0x48>
+
+00000064 <.L133>:
+  64:	fdc42503          	lw	a0,-36(s0)
+  68:	00000097          	auipc	ra,0x0
+  6c:	000080e7          	jalr	ra # 68 <.L133+0x4>
+  70:	00050493          	mv	s1,a0
+  74:	fdc42503          	lw	a0,-36(s0)
+  78:	00000097          	auipc	ra,0x0
+  7c:	000080e7          	jalr	ra # 78 <.L133+0x14>
+  80:	00050793          	mv	a5,a0
+  84:	fef42423          	sw	a5,-24(s0)
+  88:	fd840713          	addi	a4,s0,-40
+  8c:	fe840793          	addi	a5,s0,-24
+  90:	00070593          	mv	a1,a4
+  94:	00078513          	mv	a0,a5
+  98:	00000097          	auipc	ra,0x0
+  9c:	000080e7          	jalr	ra # 98 <.L133+0x34>
+  a0:	00050793          	mv	a5,a0
+  a4:	0007a783          	lw	a5,0(a5)
+  a8:	00f487b3          	add	a5,s1,a5
+  ac:	fef42623          	sw	a5,-20(s0)
+  b0:	fdc42503          	lw	a0,-36(s0)
+  b4:	00000097          	auipc	ra,0x0
+  b8:	000080e7          	jalr	ra # b4 <.L133+0x50>
+  bc:	00050713          	mv	a4,a0
+  c0:	fec42783          	lw	a5,-20(s0)
+  c4:	00e7ee63          	bltu	a5,a4,e0 <.L134>
+  c8:	fdc42503          	lw	a0,-36(s0)
+  cc:	00000097          	auipc	ra,0x0
+  d0:	000080e7          	jalr	ra # cc <.L133+0x68>
+  d4:	00050713          	mv	a4,a0
+  d8:	fec42783          	lw	a5,-20(s0)
+  dc:	00f77c63          	bgeu	a4,a5,f4 <.L135>
+
+000000e0 <.L134>:
+  e0:	fdc42503          	lw	a0,-36(s0)
+  e4:	00000097          	auipc	ra,0x0
+  e8:	000080e7          	jalr	ra # e4 <.L134+0x4>
+  ec:	00050793          	mv	a5,a0
+  f0:	0080006f          	j	f8 <.L136>
+
+000000f4 <.L135>:
+  f4:	fec42783          	lw	a5,-20(s0)
+
+000000f8 <.L136>:
+  f8:	00078513          	mv	a0,a5
+  fc:	02c12083          	lw	ra,44(sp)
+
+00000100 <.L0 >:
+ 100:	02812403          	lw	s0,40(sp)
+ 104:	02412483          	lw	s1,36(sp)
+ 108:	03010113          	addi	sp,sp,48
+ 10c:	00008067          	ret
+
+Disassembly of section .text._ZSt34__uninitialized_move_if_noexcept_aIPiS0_SaIiEET0_T_S3_S2_RT1_:
+
+00000000 <_ZSt34__uninitialized_move_if_noexcept_aIPiS0_SaIiEET0_T_S3_S2_RT1_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	02010413          	addi	s0,sp,32
+
+00000014 <.L0 >:
+  14:	fea42623          	sw	a0,-20(s0)
+  18:	feb42423          	sw	a1,-24(s0)
+  1c:	fec42223          	sw	a2,-28(s0)
+  20:	fed42023          	sw	a3,-32(s0)
+  24:	fec42503          	lw	a0,-20(s0)
+  28:	00000097          	auipc	ra,0x0
+  2c:	000080e7          	jalr	ra # 28 <.L0 +0x14>
+  30:	00050493          	mv	s1,a0
+  34:	fe842503          	lw	a0,-24(s0)
+  38:	00000097          	auipc	ra,0x0
+  3c:	000080e7          	jalr	ra # 38 <.L0 +0x24>
+  40:	00050793          	mv	a5,a0
+  44:	fe042683          	lw	a3,-32(s0)
+  48:	fe442603          	lw	a2,-28(s0)
+  4c:	00078593          	mv	a1,a5
+  50:	00048513          	mv	a0,s1
+  54:	00000097          	auipc	ra,0x0
+  58:	000080e7          	jalr	ra # 54 <.L0 +0x40>
+  5c:	00050793          	mv	a5,a0
+  60:	00078513          	mv	a0,a5
+  64:	01c12083          	lw	ra,28(sp)
+
+00000068 <.L0 >:
+  68:	01812403          	lw	s0,24(sp)
+  6c:	01412483          	lw	s1,20(sp)
+  70:	02010113          	addi	sp,sp,32
+  74:	00008067          	ret
+
+Disassembly of section .text._ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEplEi:
+
+00000000 <_ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEplEi>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fcb42c23          	sw	a1,-40(s0)
+  18:	fdc42783          	lw	a5,-36(s0)
+  1c:	0007a703          	lw	a4,0(a5)
+  20:	fd842783          	lw	a5,-40(s0)
+  24:	00279793          	slli	a5,a5,0x2
+  28:	00f707b3          	add	a5,a4,a5
+  2c:	fef42623          	sw	a5,-20(s0)
+  30:	fec40713          	addi	a4,s0,-20
+  34:	fe840793          	addi	a5,s0,-24
+  38:	00070593          	mv	a1,a4
+  3c:	00078513          	mv	a0,a5
+  40:	00000097          	auipc	ra,0x0
+  44:	000080e7          	jalr	ra # 40 <.L0 +0x30>
+  48:	fe842783          	lw	a5,-24(s0)
+  4c:	00078513          	mv	a0,a5
+  50:	02c12083          	lw	ra,44(sp)
+
+00000054 <.L0 >:
+  54:	02812403          	lw	s0,40(sp)
+  58:	03010113          	addi	sp,sp,48
+  5c:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx5__ops14_Iter_comp_valISt4lessIiEEclINS_17__normal_iteratorIPiSt6vectorIiSaIiEEEEiEEbT_RT0_:
+
+00000000 <_ZN9__gnu_cxx5__ops14_Iter_comp_valISt4lessIiEEclINS_17__normal_iteratorIPiSt6vectorIiSaIiEEEEiEEbT_RT0_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	02010413          	addi	s0,sp,32
+
+00000014 <.L0 >:
+  14:	fea42623          	sw	a0,-20(s0)
+  18:	feb42423          	sw	a1,-24(s0)
+  1c:	fec42223          	sw	a2,-28(s0)
+  20:	fec42483          	lw	s1,-20(s0)
+  24:	fe840793          	addi	a5,s0,-24
+  28:	00078513          	mv	a0,a5
+  2c:	00000097          	auipc	ra,0x0
+  30:	000080e7          	jalr	ra # 2c <.L0 +0x18>
+  34:	00050793          	mv	a5,a0
+  38:	fe442603          	lw	a2,-28(s0)
+  3c:	00078593          	mv	a1,a5
+  40:	00048513          	mv	a0,s1
+  44:	00000097          	auipc	ra,0x0
+  48:	000080e7          	jalr	ra # 44 <.L0 +0x30>
+  4c:	00050793          	mv	a5,a0
+  50:	00078513          	mv	a0,a5
+  54:	01c12083          	lw	ra,28(sp)
+
+00000058 <.L0 >:
+  58:	01812403          	lw	s0,24(sp)
+  5c:	01412483          	lw	s1,20(sp)
+  60:	02010113          	addi	sp,sp,32
+  64:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEC2ERKS2_:
+
+00000000 <_ZN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEC1ERKS2_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	feb42423          	sw	a1,-24(s0)
+  14:	fe842783          	lw	a5,-24(s0)
+  18:	0007a703          	lw	a4,0(a5)
+  1c:	fec42783          	lw	a5,-20(s0)
+  20:	00e7a023          	sw	a4,0(a5)
+  24:	00000013          	nop
+  28:	01c12403          	lw	s0,28(sp)
+  2c:	02010113          	addi	sp,sp,32
+  30:	00008067          	ret
+
+Disassembly of section .text._ZSt13__adjust_heapIN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEEiiNS0_5__ops15_Iter_comp_iterISt4lessIiEEEEvT_T0_SD_T1_T2_:
+
+00000000 <_ZSt13__adjust_heapIN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEEiiNS0_5__ops15_Iter_comp_iterISt4lessIiEEEEvT_T0_SD_T1_T2_>:
+   0:	fb010113          	addi	sp,sp,-80
+   4:	04112623          	sw	ra,76(sp)
+   8:	04812423          	sw	s0,72(sp)
+   c:	04912223          	sw	s1,68(sp)
+  10:	05010413          	addi	s0,sp,80
+
+00000014 <.L0 >:
+  14:	fca42623          	sw	a0,-52(s0)
+  18:	fcb42423          	sw	a1,-56(s0)
+  1c:	fcc42223          	sw	a2,-60(s0)
+  20:	fcd42023          	sw	a3,-64(s0)
+  24:	fae40e23          	sb	a4,-68(s0)
+  28:	fc842783          	lw	a5,-56(s0)
+  2c:	fef42423          	sw	a5,-24(s0)
+  30:	fc842783          	lw	a5,-56(s0)
+  34:	fef42623          	sw	a5,-20(s0)
+
+00000038 <.L148>:
+  38:	fc442783          	lw	a5,-60(s0)
+  3c:	fff78793          	addi	a5,a5,-1
+  40:	01f7d713          	srli	a4,a5,0x1f
+  44:	00f707b3          	add	a5,a4,a5
+  48:	4017d793          	srai	a5,a5,0x1
+  4c:	00078713          	mv	a4,a5
+  50:	fec42783          	lw	a5,-20(s0)
+  54:	0ee7de63          	bge	a5,a4,150 <.L146>
+  58:	fec42783          	lw	a5,-20(s0)
+  5c:	00178793          	addi	a5,a5,1
+  60:	00179793          	slli	a5,a5,0x1
+  64:	fef42623          	sw	a5,-20(s0)
+  68:	fcc40793          	addi	a5,s0,-52
+  6c:	fec42583          	lw	a1,-20(s0)
+  70:	00078513          	mv	a0,a5
+  74:	00000097          	auipc	ra,0x0
+  78:	000080e7          	jalr	ra # 74 <.L148+0x3c>
+  7c:	00050493          	mv	s1,a0
+  80:	fec42783          	lw	a5,-20(s0)
+  84:	fff78713          	addi	a4,a5,-1
+  88:	fcc40793          	addi	a5,s0,-52
+  8c:	00070593          	mv	a1,a4
+  90:	00078513          	mv	a0,a5
+  94:	00000097          	auipc	ra,0x0
+  98:	000080e7          	jalr	ra # 94 <.L148+0x5c>
+  9c:	00050713          	mv	a4,a0
+  a0:	fbc40793          	addi	a5,s0,-68
+  a4:	00070613          	mv	a2,a4
+  a8:	00048593          	mv	a1,s1
+  ac:	00078513          	mv	a0,a5
+  b0:	00000097          	auipc	ra,0x0
+  b4:	000080e7          	jalr	ra # b0 <.L148+0x78>
+  b8:	00050793          	mv	a5,a0
+  bc:	00078863          	beqz	a5,cc <.L147>
+  c0:	fec42783          	lw	a5,-20(s0)
+  c4:	fff78793          	addi	a5,a5,-1
+  c8:	fef42623          	sw	a5,-20(s0)
+
+000000cc <.L147>:
+  cc:	fcc40793          	addi	a5,s0,-52
+  d0:	fec42583          	lw	a1,-20(s0)
+  d4:	00078513          	mv	a0,a5
+  d8:	00000097          	auipc	ra,0x0
+  dc:	000080e7          	jalr	ra # d8 <.L147+0xc>
+  e0:	00050793          	mv	a5,a0
+  e4:	fcf42c23          	sw	a5,-40(s0)
+  e8:	fd840793          	addi	a5,s0,-40
+  ec:	00078513          	mv	a0,a5
+  f0:	00000097          	auipc	ra,0x0
+  f4:	000080e7          	jalr	ra # f0 <.L147+0x24>
+  f8:	00050793          	mv	a5,a0
+  fc:	00078513          	mv	a0,a5
+ 100:	00000097          	auipc	ra,0x0
+ 104:	000080e7          	jalr	ra # 100 <.L147+0x34>
+ 108:	00050493          	mv	s1,a0
+ 10c:	fcc40793          	addi	a5,s0,-52
+ 110:	fc842583          	lw	a1,-56(s0)
+ 114:	00078513          	mv	a0,a5
+ 118:	00000097          	auipc	ra,0x0
+ 11c:	000080e7          	jalr	ra # 118 <.L147+0x4c>
+ 120:	00050793          	mv	a5,a0
+ 124:	fcf42e23          	sw	a5,-36(s0)
+ 128:	fdc40793          	addi	a5,s0,-36
+ 12c:	00078513          	mv	a0,a5
+ 130:	00000097          	auipc	ra,0x0
+ 134:	000080e7          	jalr	ra # 130 <.L147+0x64>
+ 138:	00050713          	mv	a4,a0
+ 13c:	0004a783          	lw	a5,0(s1)
+ 140:	00f72023          	sw	a5,0(a4)
+ 144:	fec42783          	lw	a5,-20(s0)
+ 148:	fcf42423          	sw	a5,-56(s0)
+ 14c:	eedff06f          	j	38 <.L148>
+
+00000150 <.L146>:
+ 150:	fc442783          	lw	a5,-60(s0)
+ 154:	0017f793          	andi	a5,a5,1
+ 158:	0c079063          	bnez	a5,218 <.L149>
+ 15c:	fc442783          	lw	a5,-60(s0)
+ 160:	ffe78793          	addi	a5,a5,-2
+ 164:	01f7d713          	srli	a4,a5,0x1f
+ 168:	00f707b3          	add	a5,a4,a5
+ 16c:	4017d793          	srai	a5,a5,0x1
+ 170:	00078713          	mv	a4,a5
+ 174:	fec42783          	lw	a5,-20(s0)
+ 178:	0ae79063          	bne	a5,a4,218 <.L149>
+ 17c:	fec42783          	lw	a5,-20(s0)
+ 180:	00178793          	addi	a5,a5,1
+ 184:	00179793          	slli	a5,a5,0x1
+ 188:	fef42623          	sw	a5,-20(s0)
+ 18c:	fec42783          	lw	a5,-20(s0)
+ 190:	fff78713          	addi	a4,a5,-1
+ 194:	fcc40793          	addi	a5,s0,-52
+ 198:	00070593          	mv	a1,a4
+ 19c:	00078513          	mv	a0,a5
+ 1a0:	00000097          	auipc	ra,0x0
+ 1a4:	000080e7          	jalr	ra # 1a0 <.L146+0x50>
+ 1a8:	00050793          	mv	a5,a0
+ 1ac:	fef42023          	sw	a5,-32(s0)
+ 1b0:	fe040793          	addi	a5,s0,-32
+ 1b4:	00078513          	mv	a0,a5
+ 1b8:	00000097          	auipc	ra,0x0
+ 1bc:	000080e7          	jalr	ra # 1b8 <.L146+0x68>
+ 1c0:	00050793          	mv	a5,a0
+ 1c4:	00078513          	mv	a0,a5
+ 1c8:	00000097          	auipc	ra,0x0
+ 1cc:	000080e7          	jalr	ra # 1c8 <.L146+0x78>
+ 1d0:	00050493          	mv	s1,a0
+ 1d4:	fcc40793          	addi	a5,s0,-52
+ 1d8:	fc842583          	lw	a1,-56(s0)
+ 1dc:	00078513          	mv	a0,a5
+ 1e0:	00000097          	auipc	ra,0x0
+ 1e4:	000080e7          	jalr	ra # 1e0 <.L146+0x90>
+ 1e8:	00050793          	mv	a5,a0
+ 1ec:	fef42223          	sw	a5,-28(s0)
+ 1f0:	fe440793          	addi	a5,s0,-28
+ 1f4:	00078513          	mv	a0,a5
+ 1f8:	00000097          	auipc	ra,0x0
+ 1fc:	000080e7          	jalr	ra # 1f8 <.L146+0xa8>
+ 200:	00050713          	mv	a4,a0
+ 204:	0004a783          	lw	a5,0(s1)
+ 208:	00f72023          	sw	a5,0(a4)
+ 20c:	fec42783          	lw	a5,-20(s0)
+ 210:	fff78793          	addi	a5,a5,-1
+ 214:	fcf42423          	sw	a5,-56(s0)
+
+00000218 <.L149>:
+ 218:	fbc40793          	addi	a5,s0,-68
+ 21c:	00078513          	mv	a0,a5
+ 220:	00000097          	auipc	ra,0x0
+ 224:	000080e7          	jalr	ra # 220 <.L149+0x8>
+ 228:	00050713          	mv	a4,a0
+ 22c:	fd440793          	addi	a5,s0,-44
+ 230:	00070593          	mv	a1,a4
+ 234:	00078513          	mv	a0,a5
+ 238:	00000097          	auipc	ra,0x0
+ 23c:	000080e7          	jalr	ra # 238 <.L149+0x20>
+ 240:	fc040793          	addi	a5,s0,-64
+ 244:	00078513          	mv	a0,a5
+ 248:	00000097          	auipc	ra,0x0
+ 24c:	000080e7          	jalr	ra # 248 <.L149+0x30>
+ 250:	00050793          	mv	a5,a0
+ 254:	0007a783          	lw	a5,0(a5)
+ 258:	fd440713          	addi	a4,s0,-44
+ 25c:	00078693          	mv	a3,a5
+ 260:	fe842603          	lw	a2,-24(s0)
+ 264:	fc842583          	lw	a1,-56(s0)
+ 268:	fcc42503          	lw	a0,-52(s0)
+ 26c:	00000097          	auipc	ra,0x0
+ 270:	000080e7          	jalr	ra # 26c <.L149+0x54>
+ 274:	00000013          	nop
+ 278:	04c12083          	lw	ra,76(sp)
+
+0000027c <.L0 >:
+ 27c:	04812403          	lw	s0,72(sp)
+ 280:	04412483          	lw	s1,68(sp)
+ 284:	05010113          	addi	sp,sp,80
+ 288:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx13new_allocatorIiE7destroyIiEEvPT_:
+
+00000000 <_ZN9__gnu_cxx13new_allocatorIiE7destroyIiEEvPT_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	feb42423          	sw	a1,-24(s0)
+  14:	00000013          	nop
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZNSaIiEC2ERKS_:
+
+00000000 <_ZNSaIiEC1ERKS_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fe842583          	lw	a1,-24(s0)
+  1c:	fec42503          	lw	a0,-20(s0)
+  20:	00000097          	auipc	ra,0x0
+  24:	000080e7          	jalr	ra # 20 <.L0 +0x10>
+  28:	00000013          	nop
+  2c:	01c12083          	lw	ra,28(sp)
+
+00000030 <.L0 >:
+  30:	01812403          	lw	s0,24(sp)
+  34:	02010113          	addi	sp,sp,32
+  38:	00008067          	ret
+
+Disassembly of section .text._ZSt19__iterator_categoryIPKiENSt15iterator_traitsIT_E17iterator_categoryERKS3_:
+
+00000000 <_ZSt19__iterator_categoryIPKiENSt15iterator_traitsIT_E17iterator_categoryERKS3_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	00078513          	mv	a0,a5
+  14:	01c12403          	lw	s0,28(sp)
+  18:	02010113          	addi	sp,sp,32
+  1c:	00008067          	ret
+
+Disassembly of section .text._ZSt10__distanceIPKiENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag:
+
+00000000 <_ZSt10__distanceIPKiENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	feb42423          	sw	a1,-24(s0)
+  14:	fec40223          	sb	a2,-28(s0)
+  18:	fe842703          	lw	a4,-24(s0)
+  1c:	fec42783          	lw	a5,-20(s0)
+  20:	40f707b3          	sub	a5,a4,a5
+  24:	4027d793          	srai	a5,a5,0x2
+  28:	00078513          	mv	a0,a5
+  2c:	01c12403          	lw	s0,28(sp)
+  30:	02010113          	addi	sp,sp,32
+  34:	00008067          	ret
+
+Disassembly of section .text._ZNSt16allocator_traitsISaIiEE8allocateERS0_j:
+
+00000000 <_ZNSt16allocator_traitsISaIiEE8allocateERS0_j>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	00000613          	li	a2,0
+  1c:	fe842583          	lw	a1,-24(s0)
+  20:	fec42503          	lw	a0,-20(s0)
+  24:	00000097          	auipc	ra,0x0
+  28:	000080e7          	jalr	ra # 24 <.L0 +0x14>
+  2c:	00050793          	mv	a5,a0
+  30:	00078513          	mv	a0,a5
+  34:	01c12083          	lw	ra,28(sp)
+
+00000038 <.L0 >:
+  38:	01812403          	lw	s0,24(sp)
+  3c:	02010113          	addi	sp,sp,32
+  40:	00008067          	ret
+
+Disassembly of section .text._ZSt18uninitialized_copyIPKiPiET0_T_S4_S3_:
+
+00000000 <_ZSt18uninitialized_copyIPKiPiET0_T_S4_S3_>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fcb42c23          	sw	a1,-40(s0)
+  18:	fcc42a23          	sw	a2,-44(s0)
+  1c:	00100793          	li	a5,1
+  20:	fef407a3          	sb	a5,-17(s0)
+  24:	fd442603          	lw	a2,-44(s0)
+  28:	fd842583          	lw	a1,-40(s0)
+  2c:	fdc42503          	lw	a0,-36(s0)
+  30:	00000097          	auipc	ra,0x0
+  34:	000080e7          	jalr	ra # 30 <.L0 +0x20>
+  38:	00050793          	mv	a5,a0
+  3c:	00078513          	mv	a0,a5
+  40:	02c12083          	lw	ra,44(sp)
+
+00000044 <.L0 >:
+  44:	02812403          	lw	s0,40(sp)
+  48:	03010113          	addi	sp,sp,48
+  4c:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx13new_allocatorIiE10deallocateEPij:
+
+00000000 <_ZN9__gnu_cxx13new_allocatorIiE10deallocateEPij>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fec42223          	sw	a2,-28(s0)
+  1c:	fe842503          	lw	a0,-24(s0)
+  20:	00000097          	auipc	ra,0x0
+  24:	000080e7          	jalr	ra # 20 <.L0 +0x10>
+  28:	00000013          	nop
+  2c:	01c12083          	lw	ra,28(sp)
+
+00000030 <.L0 >:
+  30:	01812403          	lw	s0,24(sp)
+  34:	02010113          	addi	sp,sp,32
+  38:	00008067          	ret
+
+Disassembly of section .text._ZNKSt6vectorIiSaIiEE8max_sizeEv:
+
+00000000 <_ZNKSt6vectorIiSaIiEE8max_sizeEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42783          	lw	a5,-20(s0)
+  18:	00078513          	mv	a0,a5
+  1c:	00000097          	auipc	ra,0x0
+  20:	000080e7          	jalr	ra # 1c <.L0 +0xc>
+  24:	00050793          	mv	a5,a0
+  28:	00078513          	mv	a0,a5
+  2c:	00000097          	auipc	ra,0x0
+  30:	000080e7          	jalr	ra # 2c <.L0 +0x1c>
+  34:	00050793          	mv	a5,a0
+  38:	00078513          	mv	a0,a5
+  3c:	01c12083          	lw	ra,28(sp)
+
+00000040 <.L0 >:
+  40:	01812403          	lw	s0,24(sp)
+  44:	02010113          	addi	sp,sp,32
+  48:	00008067          	ret
+
+Disassembly of section .text._ZSt3maxIjERKT_S2_S2_:
+
+00000000 <_ZSt3maxIjERKT_S2_S2_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+
+0000000c <.L0 >:
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	feb42423          	sw	a1,-24(s0)
+  14:	fec42783          	lw	a5,-20(s0)
+  18:	0007a703          	lw	a4,0(a5)
+  1c:	fe842783          	lw	a5,-24(s0)
+  20:	0007a783          	lw	a5,0(a5)
+  24:	00f77663          	bgeu	a4,a5,30 <.L164>
+  28:	fe842783          	lw	a5,-24(s0)
+  2c:	0080006f          	j	34 <.L165>
+
+00000030 <.L164>:
+  30:	fec42783          	lw	a5,-20(s0)
+
+00000034 <.L165>:
+  34:	00078513          	mv	a0,a5
+  38:	01c12403          	lw	s0,28(sp)
+
+0000003c <.L0 >:
+  3c:	02010113          	addi	sp,sp,32
+  40:	00008067          	ret
+
+Disassembly of section .text._ZSt32__make_move_if_noexcept_iteratorIiSt13move_iteratorIPiEET0_PT_:
+
+00000000 <_ZSt32__make_move_if_noexcept_iteratorIiSt13move_iteratorIPiEET0_PT_>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fec40793          	addi	a5,s0,-20
+  18:	fdc42583          	lw	a1,-36(s0)
+  1c:	00078513          	mv	a0,a5
+  20:	00000097          	auipc	ra,0x0
+  24:	000080e7          	jalr	ra # 20 <.L0 +0x10>
+  28:	fec42783          	lw	a5,-20(s0)
+  2c:	00078513          	mv	a0,a5
+  30:	02c12083          	lw	ra,44(sp)
+
+00000034 <.L0 >:
+  34:	02812403          	lw	s0,40(sp)
+  38:	03010113          	addi	sp,sp,48
+  3c:	00008067          	ret
+
+Disassembly of section .text._ZSt22__uninitialized_copy_aISt13move_iteratorIPiES1_iET0_T_S4_S3_RSaIT1_E:
+
+00000000 <_ZSt22__uninitialized_copy_aISt13move_iteratorIPiES1_iET0_T_S4_S3_RSaIT1_E>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fec42223          	sw	a2,-28(s0)
+  1c:	fed42023          	sw	a3,-32(s0)
+  20:	fe442603          	lw	a2,-28(s0)
+  24:	fe842583          	lw	a1,-24(s0)
+  28:	fec42503          	lw	a0,-20(s0)
+  2c:	00000097          	auipc	ra,0x0
+  30:	000080e7          	jalr	ra # 2c <.L0 +0x1c>
+  34:	00050793          	mv	a5,a0
+  38:	00078513          	mv	a0,a5
+  3c:	01c12083          	lw	ra,28(sp)
+
+00000040 <.L0 >:
+  40:	01812403          	lw	s0,24(sp)
+  44:	02010113          	addi	sp,sp,32
+  48:	00008067          	ret
+
+Disassembly of section .text._ZNKSt4lessIiEclERKiS2_:
+
+00000000 <_ZNKSt4lessIiEclERKiS2_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	feb42423          	sw	a1,-24(s0)
+  14:	fec42223          	sw	a2,-28(s0)
+  18:	fe842783          	lw	a5,-24(s0)
+  1c:	0007a703          	lw	a4,0(a5)
+  20:	fe442783          	lw	a5,-28(s0)
+  24:	0007a783          	lw	a5,0(a5)
+  28:	00f727b3          	slt	a5,a4,a5
+  2c:	0ff7f793          	andi	a5,a5,255
+  30:	00078513          	mv	a0,a5
+  34:	01c12403          	lw	s0,28(sp)
+  38:	02010113          	addi	sp,sp,32
+  3c:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx5__ops15_Iter_comp_iterISt4lessIiEEclINS_17__normal_iteratorIPiSt6vectorIiSaIiEEEESB_EEbT_T0_:
+
+00000000 <_ZN9__gnu_cxx5__ops15_Iter_comp_iterISt4lessIiEEclINS_17__normal_iteratorIPiSt6vectorIiSaIiEEEESB_EEbT_T0_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	01212823          	sw	s2,16(sp)
+  14:	02010413          	addi	s0,sp,32
+
+00000018 <.L0 >:
+  18:	fea42623          	sw	a0,-20(s0)
+  1c:	feb42423          	sw	a1,-24(s0)
+  20:	fec42223          	sw	a2,-28(s0)
+  24:	fec42483          	lw	s1,-20(s0)
+  28:	fe840793          	addi	a5,s0,-24
+  2c:	00078513          	mv	a0,a5
+  30:	00000097          	auipc	ra,0x0
+  34:	000080e7          	jalr	ra # 30 <.L0 +0x18>
+  38:	00050913          	mv	s2,a0
+  3c:	fe440793          	addi	a5,s0,-28
+  40:	00078513          	mv	a0,a5
+  44:	00000097          	auipc	ra,0x0
+  48:	000080e7          	jalr	ra # 44 <.L0 +0x2c>
+  4c:	00050793          	mv	a5,a0
+  50:	00078613          	mv	a2,a5
+  54:	00090593          	mv	a1,s2
+  58:	00048513          	mv	a0,s1
+  5c:	00000097          	auipc	ra,0x0
+  60:	000080e7          	jalr	ra # 5c <.L0 +0x44>
+  64:	00050793          	mv	a5,a0
+  68:	00078513          	mv	a0,a5
+  6c:	01c12083          	lw	ra,28(sp)
+
+00000070 <.L0 >:
+  70:	01812403          	lw	s0,24(sp)
+  74:	01412483          	lw	s1,20(sp)
+  78:	01012903          	lw	s2,16(sp)
+  7c:	02010113          	addi	sp,sp,32
+  80:	00008067          	ret
+
+Disassembly of section .text._ZSt4moveIRN9__gnu_cxx5__ops15_Iter_comp_iterISt4lessIiEEEEONSt16remove_referenceIT_E4typeEOS8_:
+
+00000000 <_ZSt4moveIRN9__gnu_cxx5__ops15_Iter_comp_iterISt4lessIiEEEEONSt16remove_referenceIT_E4typeEOS8_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	00078513          	mv	a0,a5
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx5__ops14_Iter_comp_valISt4lessIiEEC2EONS0_15_Iter_comp_iterIS3_EE:
+
+00000000 <_ZN9__gnu_cxx5__ops14_Iter_comp_valISt4lessIiEEC1EONS0_15_Iter_comp_iterIS3_EE>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fe842783          	lw	a5,-24(s0)
+  1c:	00078513          	mv	a0,a5
+  20:	00000097          	auipc	ra,0x0
+  24:	000080e7          	jalr	ra # 20 <.L0 +0x10>
+  28:	00000013          	nop
+  2c:	01c12083          	lw	ra,28(sp)
+
+00000030 <.L0 >:
+  30:	01812403          	lw	s0,24(sp)
+  34:	02010113          	addi	sp,sp,32
+  38:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx13new_allocatorIiEC2ERKS1_:
+
+00000000 <_ZN9__gnu_cxx13new_allocatorIiEC1ERKS1_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	feb42423          	sw	a1,-24(s0)
+  14:	00000013          	nop
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZN9__gnu_cxx13new_allocatorIiE8allocateEjPKv:
+
+00000000 <_ZN9__gnu_cxx13new_allocatorIiE8allocateEjPKv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fec42223          	sw	a2,-28(s0)
+  1c:	fec42503          	lw	a0,-20(s0)
+  20:	00000097          	auipc	ra,0x0
+  24:	000080e7          	jalr	ra # 20 <.L0 +0x10>
+  28:	00050713          	mv	a4,a0
+  2c:	fe842783          	lw	a5,-24(s0)
+  30:	00f737b3          	sltu	a5,a4,a5
+  34:	0ff7f793          	andi	a5,a5,255
+  38:	00078663          	beqz	a5,44 <.L179>
+  3c:	00000097          	auipc	ra,0x0
+  40:	000080e7          	jalr	ra # 3c <.L0 +0x2c>
+
+00000044 <.L179>:
+  44:	fe842783          	lw	a5,-24(s0)
+  48:	00279793          	slli	a5,a5,0x2
+  4c:	00078513          	mv	a0,a5
+  50:	00000097          	auipc	ra,0x0
+  54:	000080e7          	jalr	ra # 50 <.L179+0xc>
+  58:	00050793          	mv	a5,a0
+  5c:	00078513          	mv	a0,a5
+  60:	01c12083          	lw	ra,28(sp)
+
+00000064 <.L0 >:
+  64:	01812403          	lw	s0,24(sp)
+  68:	02010113          	addi	sp,sp,32
+  6c:	00008067          	ret
+
+Disassembly of section .text._ZNSt20__uninitialized_copyILb1EE13__uninit_copyIPKiPiEET0_T_S6_S5_:
+
+00000000 <_ZNSt20__uninitialized_copyILb1EE13__uninit_copyIPKiPiEET0_T_S6_S5_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fec42223          	sw	a2,-28(s0)
+  1c:	fe442603          	lw	a2,-28(s0)
+  20:	fe842583          	lw	a1,-24(s0)
+  24:	fec42503          	lw	a0,-20(s0)
+  28:	00000097          	auipc	ra,0x0
+  2c:	000080e7          	jalr	ra # 28 <.L0 +0x18>
+  30:	00050793          	mv	a5,a0
+  34:	00078513          	mv	a0,a5
+  38:	01c12083          	lw	ra,28(sp)
+
+0000003c <.L0 >:
+  3c:	01812403          	lw	s0,24(sp)
+  40:	02010113          	addi	sp,sp,32
+  44:	00008067          	ret
+
+Disassembly of section .text._ZNSt16allocator_traitsISaIiEE8max_sizeERKS0_:
+
+00000000 <_ZNSt16allocator_traitsISaIiEE8max_sizeERKS0_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42503          	lw	a0,-20(s0)
+  18:	00000097          	auipc	ra,0x0
+  1c:	000080e7          	jalr	ra # 18 <.L0 +0x8>
+  20:	00050793          	mv	a5,a0
+  24:	00078513          	mv	a0,a5
+  28:	01c12083          	lw	ra,28(sp)
+
+0000002c <.L0 >:
+  2c:	01812403          	lw	s0,24(sp)
+  30:	02010113          	addi	sp,sp,32
+  34:	00008067          	ret
+
+Disassembly of section .text._ZNKSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv:
+
+00000000 <_ZNKSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	00078513          	mv	a0,a5
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZNSt13move_iteratorIPiEC2ES0_:
+
+00000000 <_ZNSt13move_iteratorIPiEC1ES0_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	feb42423          	sw	a1,-24(s0)
+  14:	fec42783          	lw	a5,-20(s0)
+  18:	fe842703          	lw	a4,-24(s0)
+  1c:	00e7a023          	sw	a4,0(a5)
+  20:	00000013          	nop
+  24:	01c12403          	lw	s0,28(sp)
+  28:	02010113          	addi	sp,sp,32
+  2c:	00008067          	ret
+
+Disassembly of section .text._ZSt18uninitialized_copyISt13move_iteratorIPiES1_ET0_T_S4_S3_:
+
+00000000 <_ZSt18uninitialized_copyISt13move_iteratorIPiES1_ET0_T_S4_S3_>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fcb42c23          	sw	a1,-40(s0)
+  18:	fcc42a23          	sw	a2,-44(s0)
+  1c:	00100793          	li	a5,1
+  20:	fef407a3          	sb	a5,-17(s0)
+  24:	fd442603          	lw	a2,-44(s0)
+  28:	fd842583          	lw	a1,-40(s0)
+  2c:	fdc42503          	lw	a0,-36(s0)
+  30:	00000097          	auipc	ra,0x0
+  34:	000080e7          	jalr	ra # 30 <.L0 +0x20>
+  38:	00050793          	mv	a5,a0
+  3c:	00078513          	mv	a0,a5
+  40:	02c12083          	lw	ra,44(sp)
+
+00000044 <.L0 >:
+  44:	02812403          	lw	s0,40(sp)
+  48:	03010113          	addi	sp,sp,48
+  4c:	00008067          	ret
+
+Disassembly of section .text._ZNK9__gnu_cxx13new_allocatorIiE8max_sizeEv:
+
+00000000 <_ZNK9__gnu_cxx13new_allocatorIiE8max_sizeEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+
+0000000c <.L0 >:
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	400007b7          	lui	a5,0x40000
+  14:	fff78793          	addi	a5,a5,-1 # 3fffffff <.L0 +0x3ffffb03>
+  18:	00078513          	mv	a0,a5
+  1c:	01c12403          	lw	s0,28(sp)
+
+00000020 <.L0 >:
+  20:	02010113          	addi	sp,sp,32
+  24:	00008067          	ret
+
+Disassembly of section .text._ZSt4copyIPKiPiET0_T_S4_S3_:
+
+00000000 <_ZSt4copyIPKiPiET0_T_S4_S3_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	02010413          	addi	s0,sp,32
+
+00000014 <.L0 >:
+  14:	fea42623          	sw	a0,-20(s0)
+  18:	feb42423          	sw	a1,-24(s0)
+  1c:	fec42223          	sw	a2,-28(s0)
+  20:	fec42503          	lw	a0,-20(s0)
+  24:	00000097          	auipc	ra,0x0
+  28:	000080e7          	jalr	ra # 24 <.L0 +0x10>
+  2c:	00050493          	mv	s1,a0
+  30:	fe842503          	lw	a0,-24(s0)
+  34:	00000097          	auipc	ra,0x0
+  38:	000080e7          	jalr	ra # 34 <.L0 +0x20>
+  3c:	00050793          	mv	a5,a0
+  40:	fe442603          	lw	a2,-28(s0)
+  44:	00078593          	mv	a1,a5
+  48:	00048513          	mv	a0,s1
+  4c:	00000097          	auipc	ra,0x0
+  50:	000080e7          	jalr	ra # 4c <.L0 +0x38>
+  54:	00050793          	mv	a5,a0
+  58:	00078513          	mv	a0,a5
+  5c:	01c12083          	lw	ra,28(sp)
+
+00000060 <.L0 >:
+  60:	01812403          	lw	s0,24(sp)
+  64:	01412483          	lw	s1,20(sp)
+  68:	02010113          	addi	sp,sp,32
+  6c:	00008067          	ret
+
+Disassembly of section .text._ZNSt20__uninitialized_copyILb1EE13__uninit_copyISt13move_iteratorIPiES3_EET0_T_S6_S5_:
+
+00000000 <_ZNSt20__uninitialized_copyILb1EE13__uninit_copyISt13move_iteratorIPiES3_EET0_T_S6_S5_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	feb42423          	sw	a1,-24(s0)
+  18:	fec42223          	sw	a2,-28(s0)
+  1c:	fe442603          	lw	a2,-28(s0)
+  20:	fe842583          	lw	a1,-24(s0)
+  24:	fec42503          	lw	a0,-20(s0)
+  28:	00000097          	auipc	ra,0x0
+  2c:	000080e7          	jalr	ra # 28 <.L0 +0x18>
+  30:	00050793          	mv	a5,a0
+  34:	00078513          	mv	a0,a5
+  38:	01c12083          	lw	ra,28(sp)
+
+0000003c <.L0 >:
+  3c:	01812403          	lw	s0,24(sp)
+  40:	02010113          	addi	sp,sp,32
+  44:	00008067          	ret
+
+Disassembly of section .text._ZSt12__miter_baseIPKiET_S2_:
+
+00000000 <_ZSt12__miter_baseIPKiET_S2_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	00078513          	mv	a0,a5
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZSt14__copy_move_a2ILb0EPKiPiET1_T0_S4_S3_:
+
+00000000 <_ZSt14__copy_move_a2ILb0EPKiPiET1_T0_S4_S3_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	01212823          	sw	s2,16(sp)
+  14:	02010413          	addi	s0,sp,32
+
+00000018 <.L0 >:
+  18:	fea42623          	sw	a0,-20(s0)
+  1c:	feb42423          	sw	a1,-24(s0)
+  20:	fec42223          	sw	a2,-28(s0)
+  24:	fec42503          	lw	a0,-20(s0)
+  28:	00000097          	auipc	ra,0x0
+  2c:	000080e7          	jalr	ra # 28 <.L0 +0x10>
+  30:	00050493          	mv	s1,a0
+  34:	fe842503          	lw	a0,-24(s0)
+  38:	00000097          	auipc	ra,0x0
+  3c:	000080e7          	jalr	ra # 38 <.L0 +0x20>
+  40:	00050913          	mv	s2,a0
+  44:	fe442503          	lw	a0,-28(s0)
+  48:	00000097          	auipc	ra,0x0
+  4c:	000080e7          	jalr	ra # 48 <.L0 +0x30>
+  50:	00050793          	mv	a5,a0
+  54:	00078613          	mv	a2,a5
+  58:	00090593          	mv	a1,s2
+  5c:	00048513          	mv	a0,s1
+  60:	00000097          	auipc	ra,0x0
+  64:	000080e7          	jalr	ra # 60 <.L0 +0x48>
+  68:	00050793          	mv	a5,a0
+  6c:	00078513          	mv	a0,a5
+  70:	01c12083          	lw	ra,28(sp)
+
+00000074 <.L0 >:
+  74:	01812403          	lw	s0,24(sp)
+  78:	01412483          	lw	s1,20(sp)
+  7c:	01012903          	lw	s2,16(sp)
+  80:	02010113          	addi	sp,sp,32
+  84:	00008067          	ret
+
+Disassembly of section .text._ZSt4copyISt13move_iteratorIPiES1_ET0_T_S4_S3_:
+
+00000000 <_ZSt4copyISt13move_iteratorIPiES1_ET0_T_S4_S3_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	02010413          	addi	s0,sp,32
+
+00000014 <.L0 >:
+  14:	fea42623          	sw	a0,-20(s0)
+  18:	feb42423          	sw	a1,-24(s0)
+  1c:	fec42223          	sw	a2,-28(s0)
+  20:	fec42503          	lw	a0,-20(s0)
+  24:	00000097          	auipc	ra,0x0
+  28:	000080e7          	jalr	ra # 24 <.L0 +0x10>
+  2c:	00050493          	mv	s1,a0
+  30:	fe842503          	lw	a0,-24(s0)
+  34:	00000097          	auipc	ra,0x0
+  38:	000080e7          	jalr	ra # 34 <.L0 +0x20>
+  3c:	00050793          	mv	a5,a0
+  40:	fe442603          	lw	a2,-28(s0)
+  44:	00078593          	mv	a1,a5
+  48:	00048513          	mv	a0,s1
+  4c:	00000097          	auipc	ra,0x0
+  50:	000080e7          	jalr	ra # 4c <.L0 +0x38>
+  54:	00050793          	mv	a5,a0
+  58:	00078513          	mv	a0,a5
+  5c:	01c12083          	lw	ra,28(sp)
+
+00000060 <.L0 >:
+  60:	01812403          	lw	s0,24(sp)
+  64:	01412483          	lw	s1,20(sp)
+  68:	02010113          	addi	sp,sp,32
+  6c:	00008067          	ret
+
+Disassembly of section .text._ZSt12__niter_baseIPKiET_S2_:
+
+00000000 <_ZSt12__niter_baseIPKiET_S2_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	00078513          	mv	a0,a5
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZSt12__niter_baseIPiET_S1_:
+
+00000000 <_ZSt12__niter_baseIPiET_S1_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	00078513          	mv	a0,a5
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZSt13__copy_move_aILb0EPKiPiET1_T0_S4_S3_:
+
+00000000 <_ZSt13__copy_move_aILb0EPKiPiET1_T0_S4_S3_>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fcb42c23          	sw	a1,-40(s0)
+  18:	fcc42a23          	sw	a2,-44(s0)
+  1c:	00100793          	li	a5,1
+  20:	fef407a3          	sb	a5,-17(s0)
+  24:	fd442603          	lw	a2,-44(s0)
+  28:	fd842583          	lw	a1,-40(s0)
+  2c:	fdc42503          	lw	a0,-36(s0)
+  30:	00000097          	auipc	ra,0x0
+  34:	000080e7          	jalr	ra # 30 <.L0 +0x20>
+  38:	00050793          	mv	a5,a0
+  3c:	00078513          	mv	a0,a5
+  40:	02c12083          	lw	ra,44(sp)
+
+00000044 <.L0 >:
+  44:	02812403          	lw	s0,40(sp)
+  48:	03010113          	addi	sp,sp,48
+  4c:	00008067          	ret
+
+Disassembly of section .text._ZSt12__miter_baseIPiEDTcl12__miter_basecldtfp_4baseEEESt13move_iteratorIT_E:
+
+00000000 <_ZSt12__miter_baseIPiEDTcl12__miter_basecldtfp_4baseEEESt13move_iteratorIT_E>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+
+00000010 <.L0 >:
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec40793          	addi	a5,s0,-20
+  18:	00078513          	mv	a0,a5
+  1c:	00000097          	auipc	ra,0x0
+  20:	000080e7          	jalr	ra # 1c <.L0 +0xc>
+  24:	00050793          	mv	a5,a0
+  28:	00078513          	mv	a0,a5
+  2c:	00000097          	auipc	ra,0x0
+  30:	000080e7          	jalr	ra # 2c <.L0 +0x1c>
+  34:	00050793          	mv	a5,a0
+  38:	00078513          	mv	a0,a5
+  3c:	01c12083          	lw	ra,28(sp)
+
+00000040 <.L0 >:
+  40:	01812403          	lw	s0,24(sp)
+  44:	02010113          	addi	sp,sp,32
+  48:	00008067          	ret
+
+Disassembly of section .text._ZSt14__copy_move_a2ILb1EPiS0_ET1_T0_S2_S1_:
+
+00000000 <_ZSt14__copy_move_a2ILb1EPiS0_ET1_T0_S2_S1_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	00912a23          	sw	s1,20(sp)
+  10:	01212823          	sw	s2,16(sp)
+  14:	02010413          	addi	s0,sp,32
+
+00000018 <.L0 >:
+  18:	fea42623          	sw	a0,-20(s0)
+  1c:	feb42423          	sw	a1,-24(s0)
+  20:	fec42223          	sw	a2,-28(s0)
+  24:	fec42503          	lw	a0,-20(s0)
+  28:	00000097          	auipc	ra,0x0
+  2c:	000080e7          	jalr	ra # 28 <.L0 +0x10>
+  30:	00050493          	mv	s1,a0
+  34:	fe842503          	lw	a0,-24(s0)
+  38:	00000097          	auipc	ra,0x0
+  3c:	000080e7          	jalr	ra # 38 <.L0 +0x20>
+  40:	00050913          	mv	s2,a0
+  44:	fe442503          	lw	a0,-28(s0)
+  48:	00000097          	auipc	ra,0x0
+  4c:	000080e7          	jalr	ra # 48 <.L0 +0x30>
+  50:	00050793          	mv	a5,a0
+  54:	00078613          	mv	a2,a5
+  58:	00090593          	mv	a1,s2
+  5c:	00048513          	mv	a0,s1
+  60:	00000097          	auipc	ra,0x0
+  64:	000080e7          	jalr	ra # 60 <.L0 +0x48>
+  68:	00050793          	mv	a5,a0
+  6c:	00078513          	mv	a0,a5
+  70:	01c12083          	lw	ra,28(sp)
+
+00000074 <.L0 >:
+  74:	01812403          	lw	s0,24(sp)
+  78:	01412483          	lw	s1,20(sp)
+  7c:	01012903          	lw	s2,16(sp)
+  80:	02010113          	addi	sp,sp,32
+  84:	00008067          	ret
+
+Disassembly of section .text._ZNSt11__copy_moveILb0ELb1ESt26random_access_iterator_tagE8__copy_mIiEEPT_PKS3_S6_S4_:
+
+00000000 <_ZNSt11__copy_moveILb0ELb1ESt26random_access_iterator_tagE8__copy_mIiEEPT_PKS3_S6_S4_>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fcb42c23          	sw	a1,-40(s0)
+  18:	fcc42a23          	sw	a2,-44(s0)
+  1c:	fd842703          	lw	a4,-40(s0)
+  20:	fdc42783          	lw	a5,-36(s0)
+  24:	40f707b3          	sub	a5,a4,a5
+  28:	4027d793          	srai	a5,a5,0x2
+  2c:	fef42623          	sw	a5,-20(s0)
+  30:	fec42783          	lw	a5,-20(s0)
+  34:	02078063          	beqz	a5,54 <.L213>
+  38:	fec42783          	lw	a5,-20(s0)
+  3c:	00279793          	slli	a5,a5,0x2
+  40:	00078613          	mv	a2,a5
+  44:	fdc42583          	lw	a1,-36(s0)
+  48:	fd442503          	lw	a0,-44(s0)
+  4c:	00000097          	auipc	ra,0x0
+  50:	000080e7          	jalr	ra # 4c <.L0 +0x3c>
+
+00000054 <.L213>:
+  54:	fec42783          	lw	a5,-20(s0)
+  58:	00279793          	slli	a5,a5,0x2
+  5c:	fd442703          	lw	a4,-44(s0)
+  60:	00f707b3          	add	a5,a4,a5
+  64:	00078513          	mv	a0,a5
+  68:	02c12083          	lw	ra,44(sp)
+
+0000006c <.L0 >:
+  6c:	02812403          	lw	s0,40(sp)
+  70:	03010113          	addi	sp,sp,48
+  74:	00008067          	ret
+
+Disassembly of section .text._ZNKSt13move_iteratorIPiE4baseEv:
+
+00000000 <_ZNKSt13move_iteratorIPiE4baseEv>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	0007a783          	lw	a5,0(a5)
+  18:	00078513          	mv	a0,a5
+  1c:	01c12403          	lw	s0,28(sp)
+  20:	02010113          	addi	sp,sp,32
+  24:	00008067          	ret
+
+Disassembly of section .text._ZSt12__miter_baseIPiET_S1_:
+
+00000000 <_ZSt12__miter_baseIPiET_S1_>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00812e23          	sw	s0,28(sp)
+   8:	02010413          	addi	s0,sp,32
+   c:	fea42623          	sw	a0,-20(s0)
+  10:	fec42783          	lw	a5,-20(s0)
+  14:	00078513          	mv	a0,a5
+  18:	01c12403          	lw	s0,28(sp)
+  1c:	02010113          	addi	sp,sp,32
+  20:	00008067          	ret
+
+Disassembly of section .text._ZSt13__copy_move_aILb1EPiS0_ET1_T0_S2_S1_:
+
+00000000 <_ZSt13__copy_move_aILb1EPiS0_ET1_T0_S2_S1_>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fcb42c23          	sw	a1,-40(s0)
+  18:	fcc42a23          	sw	a2,-44(s0)
+  1c:	00100793          	li	a5,1
+  20:	fef407a3          	sb	a5,-17(s0)
+  24:	fd442603          	lw	a2,-44(s0)
+  28:	fd842583          	lw	a1,-40(s0)
+  2c:	fdc42503          	lw	a0,-36(s0)
+  30:	00000097          	auipc	ra,0x0
+  34:	000080e7          	jalr	ra # 30 <.L0 +0x20>
+  38:	00050793          	mv	a5,a0
+  3c:	00078513          	mv	a0,a5
+  40:	02c12083          	lw	ra,44(sp)
+
+00000044 <.L0 >:
+  44:	02812403          	lw	s0,40(sp)
+  48:	03010113          	addi	sp,sp,48
+  4c:	00008067          	ret
+
+Disassembly of section .text._ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIiEEPT_PKS3_S6_S4_:
+
+00000000 <_ZNSt11__copy_moveILb1ELb1ESt26random_access_iterator_tagE8__copy_mIiEEPT_PKS3_S6_S4_>:
+   0:	fd010113          	addi	sp,sp,-48
+   4:	02112623          	sw	ra,44(sp)
+   8:	02812423          	sw	s0,40(sp)
+   c:	03010413          	addi	s0,sp,48
+
+00000010 <.L0 >:
+  10:	fca42e23          	sw	a0,-36(s0)
+  14:	fcb42c23          	sw	a1,-40(s0)
+  18:	fcc42a23          	sw	a2,-44(s0)
+  1c:	fd842703          	lw	a4,-40(s0)
+  20:	fdc42783          	lw	a5,-36(s0)
+  24:	40f707b3          	sub	a5,a4,a5
+  28:	4027d793          	srai	a5,a5,0x2
+  2c:	fef42623          	sw	a5,-20(s0)
+  30:	fec42783          	lw	a5,-20(s0)
+  34:	02078063          	beqz	a5,54 <.L222>
+  38:	fec42783          	lw	a5,-20(s0)
+  3c:	00279793          	slli	a5,a5,0x2
+  40:	00078613          	mv	a2,a5
+  44:	fdc42583          	lw	a1,-36(s0)
+  48:	fd442503          	lw	a0,-44(s0)
+  4c:	00000097          	auipc	ra,0x0
+  50:	000080e7          	jalr	ra # 4c <.L0 +0x3c>
+
+00000054 <.L222>:
+  54:	fec42783          	lw	a5,-20(s0)
+  58:	00279793          	slli	a5,a5,0x2
+  5c:	fd442703          	lw	a4,-44(s0)
+  60:	00f707b3          	add	a5,a4,a5
+  64:	00078513          	mv	a0,a5
+  68:	02c12083          	lw	ra,44(sp)
+
+0000006c <.L0 >:
+  6c:	02812403          	lw	s0,40(sp)
+  70:	03010113          	addi	sp,sp,48
+  74:	00008067          	ret
