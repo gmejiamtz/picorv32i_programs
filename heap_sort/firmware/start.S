@@ -5,12 +5,12 @@
 // binary, for any purpose, commercial or non-commercial, and by any
 // means.
 
-#define ENABLE_QREGS
-#define ENABLE_HELLO
-#define ENABLE_RVTST
-#define ENABLE_SIEVE
-#define ENABLE_MULTST
-#define ENABLE_STATS
+#define ENABLE_QREGS	0
+#define ENABLE_HELLO	1
+#define ENABLE_RVTST	0
+#define ENABLE_SIEVE	0
+#define ENABLE_MULTST	0
+#define ENABLE_STATS	0
 
 #ifndef ENABLE_QREGS
 #  undef ENABLE_RVTST
@@ -25,7 +25,7 @@
 
 	.section .text
 	.global irq
-	.global hello
+	.global main
 	.global sieve
 	.global multest
 	.global hard_mul
@@ -532,3 +532,4 @@ hard_rem:
 hard_remu:
 	remu a0, a0, a1
 	ret
+
