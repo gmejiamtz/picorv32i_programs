@@ -20,6 +20,10 @@ firmware/firmware.elf: $(FIRMWARE_OBJS) $(TEST_OBJS) firmware/sections.lds main.
 firmware/firmware.hex: firmware/firmware.bin firmware/makehex.py
 	$(PYTHON) firmware/makehex.py $< 32768 > $@
 
+
+#firmware/firmware.hex: firmware/firmware.elf
+#	$(TOOLCHAIN_PREFIX)objcopy -O verilog $^ $@
+
 firmware/firmware.bin: firmware/firmware.elf
 	$(TOOLCHAIN_PREFIX)objcopy -O binary $< $@
 	chmod -x $@
