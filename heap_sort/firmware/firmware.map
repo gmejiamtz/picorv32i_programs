@@ -22,41 +22,40 @@ code             0x00000000c0000000 0x0000000000008000
 Linker script and memory map
 
 
-.text           0x00000000c0000000      0x4a8
+.text           0x00000000c0000000      0x5e8
                 0x00000000c0000000                . = ALIGN (0x4)
  *(.text)
- .text          0x00000000c0000000       0x8a firmware/start.o
- .text          0x00000000c000008a       0x8e firmware/print.o
-                0x00000000c000008a                print_chr
-                0x00000000c0000092                print_str
-                0x00000000c00000a4                print_dec
-                0x00000000c00000f0                print_hex
- .text          0x00000000c0000118      0x2a4 main.o
-                0x00000000c0000118                swap
-                0x00000000c000014e                heapify
-                0x00000000c000022e                heapSort
-                0x00000000c00002ba                main
- *fill*         0x00000000c00003bc        0x0 
- .text          0x00000000c00003bc       0xb4 /opt/riscv32i/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(div.o)
-                0x00000000c00003bc                __divsi3
-                0x00000000c00003c4                __udivsi3
-                0x00000000c000040c                __umodsi3
-                0x00000000c0000440                __modsi3
+ .text          0x00000000c0000000       0x88 firmware/start.o
+ .text          0x00000000c0000088       0xe0 firmware/print.o
+                0x00000000c0000088                print_chr
+                0x00000000c0000094                print_str
+                0x00000000c00000b0                print_dec
+                0x00000000c0000130                print_hex
+ .text          0x00000000c0000168      0x394 main.o
+                0x00000000c0000168                swap
+                0x00000000c00001b4                heapify
+                0x00000000c00002d4                heapSort
+                0x00000000c0000390                main
+ .text          0x00000000c00004fc       0xb4 /opt/riscv32i/lib/gcc/riscv32-unknown-elf/8.2.0/libgcc.a(div.o)
+                0x00000000c00004fc                __divsi3
+                0x00000000c0000504                __udivsi3
+                0x00000000c000054c                __umodsi3
+                0x00000000c0000580                __modsi3
  *(.text*)
  *(.rodata)
- .rodata        0x00000000c0000470       0x23 main.o
+ .rodata        0x00000000c00005b0       0x23 main.o
  *(.rodata*)
- *fill*         0x00000000c0000493        0x1 
+ *fill*         0x00000000c00005d3        0x1 
  .rodata.str1.4
-                0x00000000c0000494       0x14 firmware/print.o
+                0x00000000c00005d4       0x14 firmware/print.o
                                          0x11 (size before relaxing)
  *(.srodata)
  *(.srodata*)
-                0x00000000c00004a8                . = ALIGN (0x4)
-                0x00000000c00004a8                _etext = .
-                0x00000000c00004a8                _sidata = _etext
+                0x00000000c00005e8                . = ALIGN (0x4)
+                0x00000000c00005e8                _etext = .
+                0x00000000c00005e8                _sidata = _etext
 
-.data           0x0000000000000000        0x0 load address 0x00000000c00004a8
+.data           0x0000000000000000        0x0 load address 0x00000000c00005e8
                 0x0000000000000000                . = ALIGN (0x4)
                 0x0000000000000000                _sdata = .
                 0x0000000000000000                _ram_start = .
@@ -72,7 +71,7 @@ Linker script and memory map
                 0x0000000000000000                . = ALIGN (0x4)
                 0x0000000000000000                _edata = .
 
-.bss            0x0000000000000000        0x0 load address 0x00000000c00004a8
+.bss            0x0000000000000000        0x0 load address 0x00000000c00005e8
                 0x0000000000000000                . = ALIGN (0x4)
                 0x0000000000000000                _sbss = .
  *(.bss)

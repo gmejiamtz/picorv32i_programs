@@ -46,12 +46,11 @@ start:
 	addi x31, zero, 0
 
 	/* set stack pointer */
-	li sp,0xc000ffff
+	li sp,0xc0010000
 
 	/* call main C code */
-	jal ra,main
+	jal main
 
 	/* trap */
 	ebreak
-
 
