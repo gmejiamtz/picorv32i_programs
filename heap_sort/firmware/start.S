@@ -46,7 +46,7 @@ start:
 	addi x31, zero, 0
 
 	/* set stack pointer */
-	li sp,0xc0010000
+	li sp,0x00010000
 
 	/* call main C code */
 	jal main

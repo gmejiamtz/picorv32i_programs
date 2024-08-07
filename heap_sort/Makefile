@@ -39,4 +39,4 @@ main.o: heap_sort.c
 	$(TOOLCHAIN_PREFIX)gcc -c -mabi=ilp32 -march=rv32im -o $@ $<
 
 clean:
-	rm -f firmware/*.o tests/*.o *.o firmware/*.bin firmware/*.bin firmware/*.map firmware/*.hex firmware/*.elf
+	rm -f firmware/*.o tests/*.o *.o firmware/*.bin firmware/*.bin firmware/*.map firmware/*.hex firmware/*.elf main.o
