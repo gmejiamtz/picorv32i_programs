@@ -62,8 +62,13 @@ int main() {
 		"r" (address)  // Input operand: %1 (address) will be stored in a register
     );
 
+    uint32_t result;
+
     __asm__ volatile (
-		"picorv32_timer_insn(zero, 1000)\n"
+        ".word (0b0000101 << 25) | (1 << 20) | (0b110 << 12) | (0 << 7) | (0b0001011)" // Custom instruction
+        : "=r" (result) // Output the result into `result`
+        : // No input operands
+        : // No clobbered registers
     );
 
     // Generate an array of 10,000 integers (for simplicity, we use a simple pattern)
