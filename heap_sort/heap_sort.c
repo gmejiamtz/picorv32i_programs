@@ -2,6 +2,7 @@
 
 #define ARRAY_SIZE 10000
 
+
 // Function to swap two integers
 void swap(int* a, int* b) {
     int temp = *a;
@@ -50,6 +51,16 @@ void heapSort(int arr[], int n) {
 
 int main() {
     int arr[ARRAY_SIZE];
+
+    uint32_t address = 0x1000; // Example memory address
+	uint32_t value_s = 0x0F00;
+
+	__asm__ volatile (
+		"sw %0, 0(%1)"   // Store word from %0 to address in %1
+		:                // No output operands
+		: "r" (value_s),   // Input operand: %0 (value) will be stored in a register
+		"r" (address)  // Input operand: %1 (address) will be stored in a register
+    );
 
     // Generate an array of 10,000 integers (for simplicity, we use a simple pattern)
     for (int i = 0; i < ARRAY_SIZE; i++) {
