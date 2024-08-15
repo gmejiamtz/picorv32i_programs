@@ -5,6 +5,8 @@
 // binary, for any purpose, commercial or non-commercial, and by any
 // means.
 
+#include "custom_ops.S"
+
 	.section .text
 
 /* Main program
