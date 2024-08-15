@@ -62,6 +62,10 @@ int main() {
 		"r" (address)  // Input operand: %1 (address) will be stored in a register
     );
 
+    __asm__ volatile (
+		"picorv32_timer_insn(zero, 1000)\n"
+    );
+
     // Generate an array of 10,000 integers (for simplicity, we use a simple pattern)
     for (int i = 0; i < ARRAY_SIZE; i++) {
         arr[i] = ARRAY_SIZE - i;
