@@ -65,7 +65,7 @@ int main() {
     uint32_t result;
 
     __asm__ volatile (
-        "li x5, 1000\n"   // Load immediate 1000 into t0 (x5)
+        "li x5, 0x3E8\n"   // Load immediate 1000 into t0 (x5)
         ".word (0b0000101 << 25) | (5 << 20) | (0b110 << 12) | (0 << 7) | (0b0001011)\n" // Custom instruction
         : "=r" (result)  // Output operand: %0 corresponds to x1 (result will be stored here)
         :                // No input operands
