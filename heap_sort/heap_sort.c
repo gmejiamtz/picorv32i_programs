@@ -65,17 +65,11 @@ int main() {
     uint32_t result_0, result_1;
 
     __asm__ volatile (
-        "addi %0, zero, 1000"
-        : "=r" (result_0)  // Output operand: %0 corresponds to x1 (result will be stored here)
+        "addi %0, zero, 1000\n"
+        ".word (0b0000101 << 25) | (1 << 20) | (0b110 << 12) | (0 << 7) | (0b0001011)\n" // Custom instruction
+        : "=r" (result_0), "=r" (result_1)  // Output operand: %0 corresponds to x1 (result will be stored here)
         :                // No input operands
         : "x1"           // Clobber list: indicate that x1 is modified
-    );
-
-    __asm__ volatile (
-        ".word (0b0000101 << 25) | (1 << 20) | (0b110 << 12) | (0 << 7) | (0b0001011)" // Custom instruction
-        : "=r" (result_1) // Output the result into `result`
-        : // No input operands
-        : // No clobbered registers
     );
 
     // Generate an array of 10,000 integers (for simplicity, we use a simple pattern)
