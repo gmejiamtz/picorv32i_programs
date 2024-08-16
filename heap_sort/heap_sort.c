@@ -65,11 +65,11 @@ int main() {
     uint32_t result;
 
     __asm__ volatile (
-        "li x5, 0x3E8\n"   // Load immediate 1000 into t0 (x5)
-        ".word (0b0000101 << 25) | (5 << 20) | (0b110 << 12) | (0 << 7) | (0b0001011)\n" // Custom instruction
+        "addi %0, zero, 1000\n"  // Adds 1000 to zero and stores it in x1 (result)
+        ".word 0xa00e00b" // Custom instruction
         : "=r" (result)  // Output operand: %0 corresponds to x1 (result will be stored here)
         :                // No input operands
-        : "t0"           // Clobber list: indicate that x1 is modified
+        : "x1"           // Clobber list: indicate that x1 is modified
     );
 
     // Generate an array of 10,000 integers (for simplicity, we use a simple pattern)
