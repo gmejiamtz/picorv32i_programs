@@ -55,12 +55,12 @@ int main() {
     uint32_t address = 0x1000; // Example memory address
 	uint32_t value_s = 0x0F00;
 
-	__asm__ volatile (
+/*	__asm__ volatile (
 		"sw %0, 0(%1)"   // Store word from %0 to address in %1
 		:                // No output operands
 		: "r" (value_s),   // Input operand: %0 (value) will be stored in a register
 		"r" (address)  // Input operand: %1 (address) will be stored in a register
-    );
+    );*/
 
     uint32_t result;
 
