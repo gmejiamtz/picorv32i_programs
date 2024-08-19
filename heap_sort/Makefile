@@ -4,7 +4,7 @@ RISCV_GNU_TOOLCHAIN_INSTALL_PREFIX = /opt/riscv32
 TOOLCHAIN_PREFIX = $(RISCV_GNU_TOOLCHAIN_INSTALL_PREFIX)i/bin/riscv32-unknown-elf-
 GCC_WARNS  = -Werror -Wall -Wextra -Wshadow -Wundef -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings
 GCC_WARNS += -Wredundant-decls -Wstrict-prototypes -Wmissing-prototypes -pedantic # -Wconversion
-FIRMWARE_OBJS = firmware/start.o firmware/print.o
+FIRMWARE_OBJS = firmware/start.o firmware/print.o firmware/irq.o
 
 PICORV32_PATH = ../../picorv32
 

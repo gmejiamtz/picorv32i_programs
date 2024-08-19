@@ -381,7 +381,6 @@ start:
 
 	/* call main C code */
 	jal main
-
-	/* trap */
-	ebreak
 	
+	ebreak
+
