@@ -33,10 +33,12 @@ firmware/start.o: firmware/start.S
 firmware/%.o: firmware/%.c
 	$(TOOLCHAIN_PREFIX)gcc -c -mabi=ilp32 -march=rv32i -Os --std=c99 $(GCC_WARNS) -ffreestanding -nostdlib -o $@ $<
 
+firmware/elf_dump.txt: firmware/firmware.elf
+	$(TOOLCHAIN_PREFIX)objdump -S $^ > $@
 
 # main program
 main.o: heap_sort.c
 	$(TOOLCHAIN_PREFIX)gcc -c -mabi=ilp32 -march=rv32im -o $@ $<
 
 clean:
-	rm -f firmware/*.o tests/*.o *.o firmware/*.bin firmware/*.bin firmware/*.map firmware/*.hex firmware/*.elf main.o
+	rm -f firmware/*.o tests/*.o *.o firmware/*.bin firmware/*.bin firmware/*.map firmware/*.hex firmware/*.elf main.o firmware/*.txt
