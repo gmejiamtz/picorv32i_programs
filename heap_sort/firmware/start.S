@@ -40,8 +40,10 @@
 
 reset_vec:
 	// no more than 16 bytes here !
+/*
 	picorv32_waitirq_insn(zero)
 	picorv32_maskirq_insn(zero, zero)
+*/
 	j start
 
 
