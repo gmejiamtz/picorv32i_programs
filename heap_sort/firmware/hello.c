@@ -7,6 +7,8 @@
 
 #include "firmware.h"
 
+void hello(void);
+
 void hello(void)
 {
     uint32_t address = 0x1000; // Example memory address
