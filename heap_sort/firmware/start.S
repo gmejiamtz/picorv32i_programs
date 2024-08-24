@@ -5,22 +5,23 @@
 // binary, for any purpose, commercial or non-commercial, and by any
 // means.
 
-define ENABLE_QREGS
-define ENABLE_HELLO
-define ENABLE_RVTST
-define ENABLE_SIEVE
-define ENABLE_MULTST
-define ENABLE_STATS
+#define ENABLE_QREGS
+#define ENABLE_HELLO
+#define ENABLE_RVTST
+#define ENABLE_SIEVE
+#define ENABLE_MULTST
+#define ENABLE_STATS
 
-ifndef ENABLE_QREGS
-  undef ENABLE_RVTST
-endif
+#ifndef ENABLE_QREGS
+#  undef ENABLE_RVTST
+#endif
 
 // Only save registers in IRQ wrapper that are to be saved by the caller in
 // the RISC-V ABI, with the excpetion of the stack pointer. The IRQ handler
 // will save the rest if necessary. I.e. skip x3, x4, x8, x9, and x18-x27.
 #undef ENABLE_FASTIRQ
-include "custom_ops.S"
+
+#include "custom_ops.S"
 
 	.section .text
 	.global irq
@@ -51,7 +52,7 @@ reset_vec:
 irq_vec:
 	/* save registers */
 
-ifdef ENABLE_QREGS
+#ifdef ENABLE_QREGS
 
 	picorv32_setq_insn(q2, x1)
 	picorv32_setq_insn(q3, x2)
@@ -68,7 +69,7 @@ ifdef ENABLE_QREGS
 	picorv32_getq_insn(x2, q3)
 	sw x2,   2*4(x1)
 
-ifdef ENABLE_FASTIRQ
+#ifdef ENABLE_FASTIRQ
 	sw x5,   5*4(x1)
 	sw x6,   6*4(x1)
 	sw x7,   7*4(x1)
@@ -84,7 +85,7 @@ ifdef ENABLE_FASTIRQ
 	sw x29, 29*4(x1)
 	sw x30, 30*4(x1)
 	sw x31, 31*4(x1)
-else
+#else
 	sw x3,   3*4(x1)
 	sw x4,   4*4(x1)
 	sw x5,   5*4(x1)
@@ -114,11 +115,11 @@ else
 	sw x29, 29*4(x1)
 	sw x30, 30*4(x1)
 	sw x31, 31*4(x1)
-endif
+#endif
 
-else // ENABLE_QREGS
+#else // ENABLE_QREGS
 
-ifdef ENABLE_FASTIRQ
+#ifdef ENABLE_FASTIRQ
 	sw gp,   0*4+0x200(zero)
 	sw x1,   1*4+0x200(zero)
 	sw x2,   2*4+0x200(zero)
@@ -137,7 +138,7 @@ ifdef ENABLE_FASTIRQ
 	sw x29, 29*4+0x200(zero)
 	sw x30, 30*4+0x200(zero)
 	sw x31, 31*4+0x200(zero)
-else
+#else
 	sw gp,   0*4+0x200(zero)
 	sw x1,   1*4+0x200(zero)
 	sw x2,   2*4+0x200(zero)
@@ -170,9 +171,9 @@ else
 	sw x29, 29*4+0x200(zero)
 	sw x30, 30*4+0x200(zero)
 	sw x31, 31*4+0x200(zero)
-endif
+#endif
 
-endif // ENABLE_QREGS
+#endif // ENABLE_QREGS
 
 	/* call interrupt handler C function */
 
@@ -186,16 +187,16 @@ endif // ENABLE_QREGS
 	// arg1 = interrupt type
 #ifdef ENABLE_QREGS
 	picorv32_getq_insn(a1, q1)
-else
+#else
 	addi a1, tp, 0
-endif
+#endif
 
 	// call to C function
 	jal ra, irq
 
 	/* restore registers */
 
-ifdef ENABLE_QREGS
+#ifdef ENABLE_QREGS
 
 	// new irq_regs address returned from C code in a0
 	addi x1, a0, 0
@@ -209,7 +210,7 @@ ifdef ENABLE_QREGS
 	lw x2,   2*4(x1)
 	picorv32_setq_insn(q2, x2)
 
-ifdef ENABLE_FASTIRQ
+#ifdef ENABLE_FASTIRQ
 	lw x5,   5*4(x1)
 	lw x6,   6*4(x1)
 	lw x7,   7*4(x1)
@@ -225,7 +226,7 @@ ifdef ENABLE_FASTIRQ
 	lw x29, 29*4(x1)
 	lw x30, 30*4(x1)
 	lw x31, 31*4(x1)
-else
+#else
 	lw x3,   3*4(x1)
 	lw x4,   4*4(x1)
 	lw x5,   5*4(x1)
@@ -255,12 +256,12 @@ else
 	lw x29, 29*4(x1)
 	lw x30, 30*4(x1)
 	lw x31, 31*4(x1)
-endif
+#endif
 
 	picorv32_getq_insn(x1, q1)
 	picorv32_getq_insn(x2, q2)
 
-else // ENABLE_QREGS
+#else // ENABLE_QREGS
 
 	// new irq_regs address returned from C code in a0
 	addi a1, zero, 0x200
@@ -268,7 +269,7 @@ else // ENABLE_QREGS
 	ebreak
 1:
 
-ifdef ENABLE_FASTIRQ
+#ifdef ENABLE_FASTIRQ
 	lw gp,   0*4+0x200(zero)
 	lw x1,   1*4+0x200(zero)
 	lw x2,   2*4+0x200(zero)
@@ -287,7 +288,7 @@ ifdef ENABLE_FASTIRQ
 	lw x29, 29*4+0x200(zero)
 	lw x30, 30*4+0x200(zero)
 	lw x31, 31*4+0x200(zero)
-else
+#else
 	lw gp,   0*4+0x200(zero)
 	lw x1,   1*4+0x200(zero)
 	lw x2,   2*4+0x200(zero)
@@ -320,9 +321,9 @@ else
 	lw x29, 29*4+0x200(zero)
 	lw x30, 30*4+0x200(zero)
 	lw x31, 31*4+0x200(zero)
-endif
+#endif
 
-endif // ENABLE_QREGS
+#endif // ENABLE_QREGS
 
 	picorv32_retirq_insn()
 
