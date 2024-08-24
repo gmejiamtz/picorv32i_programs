@@ -31,9 +31,5 @@ void hello(void)
         : "x1"           // Clobber list: indicate that x1 is modified
     );
 
-	int i = 0;
-
-	while(i < 100000) {
-		i++;
-	}
+	while(1);
 }
