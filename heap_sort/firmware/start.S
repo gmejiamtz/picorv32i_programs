@@ -20,8 +20,7 @@
 // the RISC-V ABI, with the excpetion of the stack pointer. The IRQ handler
 // will save the rest if necessary. I.e. skip x3, x4, x8, x9, and x18-x27.
 #undef ENABLE_FASTIRQ
-
-#include "custom_ops.S"
+include "custom_ops.S"
 
 	.section .text
 	.global irq
