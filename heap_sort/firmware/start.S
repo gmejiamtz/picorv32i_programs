@@ -378,7 +378,7 @@ start:
 
 #ifdef ENABLE_HELLO
 	/* set stack pointer */
-	lui sp,(128*1024)>>12
+	lui sp,0x10000
 
 	/* call hello C code */
 	jal ra,hello
