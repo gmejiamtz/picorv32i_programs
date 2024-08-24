@@ -376,11 +376,11 @@ start:
 	addi x30, zero, 0
 	addi x31, zero, 0
 
+#ifdef ENABLE_HELLO
 	/* set stack pointer */
-	li sp,0x00010000
+	lui sp,(128*1024)>>12
 
-	/* call main C code */
-	jal main
-	
-	ebreak
-
+	/* call hello C code */
+	jal ra,hello
+#endif
+ebreak
