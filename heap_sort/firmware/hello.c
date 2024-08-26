@@ -31,5 +31,14 @@ void hello(void)
         : "x1"           // Clobber list: indicate that x1 is modified
     );
 
+	uint32_t value;
+
+	// Inline assembly to read the value from the memory address
+	__asm__ volatile (
+		"lw %0, 0(%1)"   // Load word from address in %1 into %0
+		: "=r" (value)   // Output operand: %0 (value) will be stored in a register
+		: "r" (address)  // Input operand: %1 (address) will be stored in a register
+	);
+
 	while(1);
 }
