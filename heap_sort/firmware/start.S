@@ -378,9 +378,26 @@ start:
 	addi x30, zero, 0
 	addi x31, zero, 0
 
+#ifdef ENABLE_HELLO
 	/* set stack pointer */
 	li sp,0x00010000
-	/* call main C code */
-	jal main
-	/* trap */
-	ebreak
+
+	/* call hello C code */
+	jal ra,hello
+#endif
+
+#ifdef ENABLE_RVTST
+#  define TEST(n) \
+	.global n; \
+	addi x1, zero, 10; \
+	picorv32_timer_insn(zero, x1); \
+	jal zero,n; \
+	.global n ## _ret; \
+	n ## _ret:
+#else
+#  define TEST(n) \
+	.global n ## _ret; \
+	n ## _ret:
+#endif
+
+	TEST(main)
