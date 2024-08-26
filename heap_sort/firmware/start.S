@@ -378,11 +378,9 @@ start:
 	addi x30, zero, 0
 	addi x31, zero, 0
 
-#ifdef ENABLE_HELLO
 	/* set stack pointer */
-	lui sp,0x10000
-
-	/* call hello C code */
-	jal ra,hello
-#endif
-ebreak
+	li sp,0x00010000
+	/* call main C code */
+	jal main
+	/* trap */
+	ebreak
