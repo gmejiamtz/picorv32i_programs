@@ -42,8 +42,8 @@ reset_vec:
 	// no more than 16 bytes here !
 /*
 	picorv32_waitirq_insn(zero)
-	picorv32_maskirq_insn(zero, zero)
 */
+	picorv32_maskirq_insn(zero, zero)
 	j start
 
 
@@ -70,6 +70,35 @@ irq_vec:
 
 	picorv32_getq_insn(x2, q3)
 	sw x2,   2*4(x1)
+
+	/* call interrupt handler C function */
+
+	lui sp, %hi(irq_stack)
+	addi sp, sp, %lo(irq_stack)
+
+	// arg0 = address of regs
+	lui a0, %hi(irq_regs)
+	addi a0, a0, %lo(irq_regs)
+
+	// arg1 = interrupt type
+	picorv32_getq_insn(a1, q1)
+
+	// call to C function
+	jal ra, irq
+
+	/* restore registers */
+
+	// new irq_regs address returned from C code in a0
+	addi x1, a0, 0
+
+	lw x2,   0*4(x1)
+	picorv32_setq_insn(q0, x2)
+
+	lw x2,   1*4(x1)
+	picorv32_setq_insn(q1, x2)
+
+	lw x2,   2*4(x1)
+	picorv32_setq_insn(q2, x2)
 
 #ifdef ENABLE_FASTIRQ
 	sw x5,   5*4(x1)
