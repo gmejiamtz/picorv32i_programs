@@ -13,6 +13,20 @@ uint32_t *irq(uint32_t *regs, uint32_t irqs)
 	static unsigned int ext_irq_5_count = 0;
 	static unsigned int timer_irq_count = 0;
 
+	if ((irqs & 1) != 0) {
+		timer_irq_count++;
+
+		uint32_t address = 0x1000; // Example memory address
+		uint32_t value;
+
+		// Inline assembly to read the value from the memory address
+		__asm__ volatile (
+			"lw %0, 0(%1)"   // Load word from address in %1 into %0
+			: "=r" (value)   // Output operand: %0 (value) will be stored in a register
+			: "r" (address)  // Input operand: %1 (address) will be stored in a register
+		);
+	}
+
 	// checking compressed isa q0 reg handling
 	if ((irqs & 6) != 0) {
 		uint32_t pc = (regs[0] & 1) ? regs[0] - 3 : regs[0] - 4;
@@ -42,23 +56,6 @@ uint32_t *irq(uint32_t *regs, uint32_t irqs)
 	if ((irqs & (1<<5)) != 0) {
 		ext_irq_5_count++;
 		// print_str("[EXT-IRQ-5]");
-	}
-
-	if ((irqs & 1) != 0) {
-		timer_irq_count++;
-
-		uint32_t address = 0x1000; // Example memory address
-		uint32_t value;
-
-		// Inline assembly to read the value from the memory address
-		__asm__ volatile (
-			"lw %0, 0(%1)"   // Load word from address in %1 into %0
-			: "=r" (value)   // Output operand: %0 (value) will be stored in a register
-			: "r" (address)  // Input operand: %1 (address) will be stored in a register
-		);
-
-		print_hex(value, 4);
-		print_str("\n");
 	}
 
 	if ((irqs & 6) != 0)
