@@ -54,6 +54,43 @@ reset_vec:
 irq_vec:
 	/* save registers */
 
+#endif // ENABLE_QREGS
+
+	/* call interrupt handler C function */
+
+	lui sp, %hi(irq_stack)
+	addi sp, sp, %lo(irq_stack)
+
+	// arg0 = address of regs
+	lui a0, %hi(irq_regs)
+	addi a0, a0, %lo(irq_regs)
+
+	// arg1 = interrupt type
+#ifdef ENABLE_QREGS
+	picorv32_getq_insn(a1, q1)
+#else
+	addi a1, tp, 0
+#endif
+
+	// call to C function
+	jal ra, irq
+
+	/* restore registers */
+
+#ifdef ENABLE_QREGS
+
+	// new irq_regs address returned from C code in a0
+	addi x1, a0, 0
+
+	lw x2,   0*4(x1)
+	picorv32_setq_insn(q0, x2)
+
+	lw x2,   1*4(x1)
+	picorv32_setq_insn(q1, x2)
+
+	lw x2,   2*4(x1)
+	picorv32_setq_insn(q2, x2)
+
 #ifdef ENABLE_QREGS
 
 	picorv32_setq_insn(q2, x1)
@@ -174,43 +211,6 @@ irq_vec:
 	sw x30, 30*4+0x200(zero)
 	sw x31, 31*4+0x200(zero)
 #endif
-
-#endif // ENABLE_QREGS
-
-	/* call interrupt handler C function */
-
-	lui sp, %hi(irq_stack)
-	addi sp, sp, %lo(irq_stack)
-
-	// arg0 = address of regs
-	lui a0, %hi(irq_regs)
-	addi a0, a0, %lo(irq_regs)
-
-	// arg1 = interrupt type
-#ifdef ENABLE_QREGS
-	picorv32_getq_insn(a1, q1)
-#else
-	addi a1, tp, 0
-#endif
-
-	// call to C function
-	jal ra, irq
-
-	/* restore registers */
-
-#ifdef ENABLE_QREGS
-
-	// new irq_regs address returned from C code in a0
-	addi x1, a0, 0
-
-	lw x2,   0*4(x1)
-	picorv32_setq_insn(q0, x2)
-
-	lw x2,   1*4(x1)
-	picorv32_setq_insn(q1, x2)
-
-	lw x2,   2*4(x1)
-	picorv32_setq_insn(q2, x2)
 
 #ifdef ENABLE_FASTIRQ
 	lw x5,   5*4(x1)
@@ -383,21 +383,7 @@ start:
 	li sp,0x00010000
 
 	/* call hello C code */
-	jal ra,hello
-#endif
+	jal main
 
-#ifdef ENABLE_RVTST
-#  define TEST(n) \
-	.global n; \
-	addi x1, zero, 10; \
-	picorv32_timer_insn(zero, x1); \
-	jal zero,n; \
-	.global n ## _ret; \
-	n ## _ret:
-#else
-#  define TEST(n) \
-	.global n ## _ret; \
-	n ## _ret:
+	ebreak
 #endif
-
-	TEST(main)
