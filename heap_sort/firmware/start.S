@@ -54,7 +54,7 @@ reset_vec:
 irq_vec:
 	/* save registers */
 
-#endif // ENABLE_QREGS
+#ifdef // ENABLE_QREGS
 
 	/* call interrupt handler C function */
 
