@@ -1,7 +1,53 @@
 #include "firmware/firmware.h"
+#include <stdio.h>
+#include <stdint.h>
 
 #define ARRAY_SIZE 10000
 
+// Define a structure to hold parsed address components
+typedef struct {
+    uint8_t bank_group;
+    uint8_t bank;
+    uint16_t column;
+    uint16_t row;
+} ParsedAddress;
+
+ParsedAddress parse_address(uint32_t app_addr) {
+    ParsedAddress result;
+
+    // Extract Bank Group from bit 3
+    result.bank_group = (app_addr >> 3) & 0x1;
+
+    // Extract Bank from bits 5:4
+    result.bank = (app_addr >> 4) & 0x3;
+
+    // Extract Column from bits 12:6
+    result.column = (app_addr >> 6) & 0x7F;
+
+    // Extract Row from bits 28:13
+    result.row = (app_addr >> 13) & 0xFFFF;
+
+    return result;
+}
+
+// Function to construct app_addr from ParsedAddress
+uint32_t construct_address(ParsedAddress parsed) {
+    uint32_t app_addr = 0;
+
+    // Place the Bank Group in bit 3
+    app_addr |= (parsed.bank_group & 0x1) << 3;
+
+    // Place the Bank in bits 5:4
+    app_addr |= (parsed.bank & 0x3) << 4;
+
+    // Place the Column in bits 12:6
+    app_addr |= (parsed.column & 0x7F) << 6;
+
+    // Place the Row in bits 28:13
+    app_addr |= (parsed.row & 0xFFFF) << 13;
+
+    return app_addr;
+}
 
 // Function to swap two integers
 void swap(int* a, int* b) {
