@@ -1,7 +1,43 @@
 #include "firmware/firmware.h"
+#include <stdio.h>
+#include <stdint.h>
 
 #define ARRAY_SIZE 10000
 
+typedef struct {
+    uint8_t bank_group;
+    uint8_t bank;
+    uint16_t column;
+    uint16_t row;
+} ParsedAddress;
+
+ParsedAddress parse_address(uint32_t app_addr) {
+    ParsedAddress result;
+
+    result.bank_group = (app_addr >> 3) & 0x1;
+
+    result.bank = (app_addr >> 4) & 0x3;
+
+    result.column = (app_addr >> 6) & 0x7F;
+
+    result.row = (app_addr >> 13) & 0xFFFF;
+
+    return result;
+}
+
+uint32_t construct_address(ParsedAddress parsed) {
+    uint32_t app_addr = 0;
+
+    app_addr |= (parsed.bank_group & 0x1) << 3;
+
+    app_addr |= (parsed.bank & 0x3) << 4;
+
+    app_addr |= (parsed.column & 0x7F) << 6;
+
+    app_addr |= (parsed.row & 0xFFFF) << 13;
+
+    return app_addr;
+}
 
 // Function to swap two integers
 void swap(int* a, int* b) {
