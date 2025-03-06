@@ -33,7 +33,7 @@ start:
 	addi x30, zero, 0
 	addi x31, zero, 0
 	/* set stack pointer */
-	li sp,0x00001000
+	li sp,0x00005000
 	/* call hello C code */
 	jal main
 	NOP

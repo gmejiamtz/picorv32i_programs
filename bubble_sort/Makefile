@@ -4,21 +4,20 @@ RISCV_GNU_TOOLCHAIN_INSTALL_PREFIX = /opt/riscv32
 TOOLCHAIN_PREFIX = $(RISCV_GNU_TOOLCHAIN_INSTALL_PREFIX)i/bin/riscv32-unknown-elf-
 GCC_WARNS  = -Werror -Wall -Wextra -Wshadow -Wundef -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings
 GCC_WARNS += -Wredundant-decls -Wstrict-prototypes -Wmissing-prototypes -pedantic # -Wconversion
-FIRMWARE_OBJS = firmware/start.o
+FIRMWARE_OBJS = firmware/start.o firmware/print.o
 
 PICORV32_PATH = ../../picorv32
 
 # firmware to run pico
 
 firmware/firmware.elf: $(FIRMWARE_OBJS) $(TEST_OBJS) firmware/sections.lds main.o
-	$(TOOLCHAIN_PREFIX)gcc -Os -mabi=ilp32 -march=rv32im -ffreestanding -nostdlib -o $@ \
+	$(TOOLCHAIN_PREFIX)gcc -Os -mabi=ilp32 -march=rv32im -ffreestanding -nostdlib -falign-functions=4 -o $@ \
 		-Wl,--build-id=none,-Bstatic,-T,firmware/sections.lds,-Map,firmware/firmware.map,--strip-debug \
 		$(FIRMWARE_OBJS) main.o -lgcc
 	chmod -x $@
 
 firmware/firmware.hex: firmware/firmware.bin firmware/makehex.py
 	$(PYTHON) firmware/makehex.py $< 32768 > $@
-
 
 #firmware/firmware.hex: firmware/firmware.elf
 #	$(TOOLCHAIN_PREFIX)objcopy -O verilog $^ $@
@@ -35,6 +34,9 @@ firmware/%.o: firmware/%.c
 
 firmware/elf_dump.txt: firmware/firmware.elf
 	$(TOOLCHAIN_PREFIX)objdump -S $^ > $@
+
+firmware/symbols_dump.txt: firmware/firmware.elf
+	$(TOOLCHAIN_PREFIX)objdump -t $^ > $@
 
 # main program
 main.o: bubble_sort.c

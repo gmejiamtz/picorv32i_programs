@@ -7,7 +7,7 @@
 
 #include "firmware.h"
 
-#define OUTPORT 0x10000000
+#define OUTPORT 0xDEADBEEF
 
 void print_chr(char ch)
 {
