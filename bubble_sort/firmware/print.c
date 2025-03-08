@@ -7,7 +7,7 @@
 
 #include "firmware.h"
 
-#define OUTPORT 0xDEADBEEF
+#define OUTPORT 0x1100BEEF
 
 void print_chr(char ch)
 {
@@ -19,7 +19,7 @@ void print_str(const char *p)
 	while (*p != 0)
 		*((volatile uint32_t*)OUTPORT) = *(p++);
 }
-
+/*
 void print_dec(unsigned int val)
 {
 	char buffer[10];
@@ -32,10 +32,11 @@ void print_dec(unsigned int val)
 		*((volatile uint32_t*)OUTPORT) = '0' + *(--p);
 	}
 }
-
+*/
+/*
 void print_hex(unsigned int val, int digits)
 {
 	for (int i = (4*digits)-4; i >= 0; i -= 4)
 		*((volatile uint32_t*)OUTPORT) = "0123456789ABCDEF"[(val >> i) % 16];
 }
-
+*/

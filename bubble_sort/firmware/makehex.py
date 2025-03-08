@@ -15,8 +15,8 @@ nwords = int(argv[2])
 with open(binfile, "rb") as f:
     bindata = f.read()
 
-assert len(bindata) < 4*nwords
-assert len(bindata) % 4 == 0
+assert (len(bindata) < 4*nwords), f"Binary data length is not less than {4*nwords} it is {len(bindata)}"
+assert (len(bindata) % 4 == 0), f"Binary data is not a multiple of 4 it is {len(bindata) % 4}"
 
 for i in range(nwords):
     if i < len(bindata) // 4:
