@@ -6,7 +6,7 @@ GCC_WARNS  = -Werror -Wall -Wextra -Wshadow -Wundef -Wpointer-arith -Wcast-qual 
 GCC_WARNS += -Wredundant-decls -Wstrict-prototypes -Wmissing-prototypes -pedantic # -Wconversion
 FIRMWARE_OBJS = firmware/start.o firmware/print.o
 ABI = ilp32
-ARCH = rv32i
+ARCH = rv32imfd
 MAX_LENGTH = 32768
 
 PICORV32_PATH = ../../picorv32
@@ -14,7 +14,7 @@ PICORV32_PATH = ../../picorv32
 # firmware to run pico
 
 firmware/firmware.elf: $(FIRMWARE_OBJS) $(TEST_OBJS) firmware/sections.lds main.o
-	$(TOOLCHAIN_PREFIX)gcc -Os -mabi=ilp32 -march=rv32i -ffreestanding -nostdlib -falign-functions=4 -o $@ \
+	$(TOOLCHAIN_PREFIX)gcc -O1 -mabi=ilp32 -march=rv32i -ffreestanding -nostdlib -falign-functions=4 -o $@ \
 		-Wl,--build-id=none,-Bstatic,-T,firmware/sections.lds,-Map,firmware/firmware.map \
 		$(FIRMWARE_OBJS) main.o -lgcc
 	chmod -x $@
@@ -33,7 +33,7 @@ firmware/start.o: firmware/start.S
 	$(TOOLCHAIN_PREFIX)gcc -c -mabi=$(ABI) -march=$(ARCH) -o $@ $<
 
 firmware/%.o: firmware/%.c
-	$(TOOLCHAIN_PREFIX)gcc -c -mabi=$(ABI) -march=$(ARCH) -Os --std=c99 $(GCC_WARNS) -ffreestanding -nostdlib -o $@ $<
+	$(TOOLCHAIN_PREFIX)gcc -c -mabi=$(ABI) -march=$(ARCH) -O1 --std=c99 $(GCC_WARNS) -ffreestanding -nostdlib -o $@ $<
 
 firmware/elf_dump.txt: firmware/firmware.elf
 	$(TOOLCHAIN_PREFIX)objdump -S $^ > $@
