@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Outputs
+*.elf
+*.bin
+*.txt
+*.map
