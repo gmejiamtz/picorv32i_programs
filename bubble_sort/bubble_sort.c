@@ -24,12 +24,16 @@ void bubbleSort(int arr[], int n) {
 
 // Main function
 void main() {
+<<<<<<< HEAD
     print_str("Sorting 64 elements\n");
+=======
+>>>>>>> bubble_sort_starting_asm
     for (int i = 0; i < ARRAY_SIZE; i++) {
         arr[i] = (ARRAY_SIZE - i);  // Reverse order for worst-case scenario
     }
     bubbleSort(arr, ARRAY_SIZE);
     //call the uart module here for all items in the 
+<<<<<<< HEAD
     print_str("Sorted the Array:\n");
     for(int i = 0; i < ARRAY_SIZE; i++) {
 	print_dec(arr[i]);
@@ -37,4 +41,6 @@ void main() {
     }
     print_chr(']');
     print_str("\nProgram Terminated...\n");
+=======
+>>>>>>> bubble_sort_starting_asm
 }
