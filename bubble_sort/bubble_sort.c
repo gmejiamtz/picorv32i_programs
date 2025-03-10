@@ -1,6 +1,8 @@
 #include "firmware/firmware.h"
 
-#define ARRAY_SIZE (4096 * 2)
+#define ARRAY_SIZE 4096
+//array held in speacial mem section of ram
+int arr[ARRAY_SIZE] __attribute__((section(".sorter_section")));
 
 // Function to swap two integers
 void swap(int* a, int* b) {
@@ -22,9 +24,9 @@ void bubbleSort(int arr[], int n) {
 
 // Main function
 void main() {
-    int arr[ARRAY_SIZE];
     for (int i = 0; i < ARRAY_SIZE; i++) {
         arr[i] = (ARRAY_SIZE - i);  // Reverse order for worst-case scenario
     }
     bubbleSort(arr, ARRAY_SIZE);
+    //call the uart module here for all items in the 
 }
