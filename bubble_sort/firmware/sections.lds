@@ -9,8 +9,8 @@ means.
 
 MEMORY {
 	code : ORIGIN = 0x00000000, LENGTH = 0x00001000
-	main_mem : ORIGIN = 0x01001000, LENGTH = 0x00001000
-	sorter_mem : ORIGIN = 0x10002000, LENGTH = 0x00001000 /* Reserve 4KB for the array */
+	main_mem : ORIGIN = 0x01001000, LENGTH = 0x00004000
+	sorter_mem : ORIGIN = 0x10005000, LENGTH = 0x00004000 /* Reserve 4KB for the array */
 }
 
 SECTIONS {
@@ -52,8 +52,8 @@ SECTIONS {
         . = ALIGN(4);
         _ebss = .;
     } >main_mem
-    /* Define the array section at 0x2000 */
-    .sorter_section : AT ( 0x2000 )
+    /* Define the array section at 0x5000 */
+    .sorter_section : AT ( 0x5000 )
     {
         KEEP(*(.sorter_section))
     } >sorter_mem
