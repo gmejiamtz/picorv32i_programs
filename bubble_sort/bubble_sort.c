@@ -36,5 +36,6 @@ void main() {
 	print_chr(',');
     }
     print_chr(']');
+    asm volatile(".word 0x81FF8FB3");
     print_str("\nProgram Terminated...\n");
 }
